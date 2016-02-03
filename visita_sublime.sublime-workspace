@@ -1,0 +1,480 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"di",
+				"dispo"
+			],
+			[
+				"dis",
+				"disponibilidade_id"
+			],
+			[
+				"disponi",
+				"disponibilidade_id"
+			],
+			[
+				"ano",
+				"anopassado"
+			],
+			[
+				"ar",
+				"arquivo_tmp"
+			],
+			[
+				"pa",
+				"pathDestak"
+			],
+			[
+				"cr",
+				"criouPasta"
+			],
+			[
+				"path",
+				"pathDestak"
+			],
+			[
+				"pat",
+				"pathDestak"
+			],
+			[
+				"u",
+				"ultimo_id"
+			],
+			[
+				"image_",
+				"image_path"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"sql",
+				"querySQL"
+			],
+			[
+				"q",
+				"querySQL"
+			],
+			[
+				"padding",
+				"padding-top"
+			],
+			[
+				"s",
+				"style	Tag"
+			],
+			[
+				"he",
+				"header	Tag"
+			],
+			[
+				"Not",
+				"NotFoundException"
+			],
+			[
+				"mod",
+				"modelsClass"
+			],
+			[
+				"mo",
+				"modelsFolders"
+			],
+			[
+				"mode",
+				"modelsClass"
+			],
+			[
+				"models",
+				"modelsFolders"
+			],
+			[
+				"for",
+				"foreach	foreach …"
+			],
+			[
+				"fo",
+				"foreach	foreach …"
+			],
+			[
+				"pos",
+				"posto_tipo"
+			],
+			[
+				"che",
+				"checked"
+			],
+			[
+				"boo",
+				"bootstrap"
+			],
+			[
+				"in",
+				"input	Tag"
+			],
+			[
+				"pr",
+				"produtos_tipo"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "includes/header.php",
+			"settings":
+			{
+				"buffer_size": 3186,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "login.php",
+			"settings":
+			{
+				"buffer_size": 2861,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+		],
+		"width": 530.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/xampp/htdocs/visita/login.php",
+		"/C/xampp/htdocs/visita/views/reserva/reserva_form.php",
+		"/C/xampp/htdocs/visita/controllers/reservacontroller.php",
+		"/C/xampp/htdocs/visita/models/Disponibilidade.php",
+		"/C/xampp/htdocs/visita/models/Reserva.php",
+		"/C/xampp/htdocs/visita/views/reserva/reserva_lista.php",
+		"/C/xampp/htdocs/visita/views/disponibilidade/disponibilidade_form.php",
+		"/C/xampp/htdocs/visita/views/disponibilidade/disponibilidade_lista.php",
+		"/C/xampp/htdocs/visita/includes/header.php",
+		"/C/xampp/htdocs/visita/includes/database.config.php",
+		"/C/xampp/htdocs/visita/controllers/disponibilidadecontroller.php",
+		"/C/xampp/htdocs/visita/controllers/cautelacontroller.php",
+		"/C/xampp/htdocs/visita/includes/commons.php",
+		"/C/xampp/htdocs/visita/includes/ldap.php",
+		"/C/xampp/htdocs/visita/includes/messages.php",
+		"/C/xampp/htdocs/visita/models/ReservaSituacao.php",
+		"/C/xampp/htdocs/visita/models/Usuario.php",
+		"/C/xampp/htdocs/visita/views/item/item_lista.php",
+		"/C/xampp/htdocs/visita/models/Item.php",
+		"/C/xampp/htdocs/visita/models/Local.php",
+		"/C/Users/admin/Desktop/teste.html",
+		"//10.100.8.9/Intranet/index.asp",
+		"//10.100.8.9/Intranet/asp/links_outros.asp",
+		"//10.100.8.9/Intranet/principal.asp",
+		"/C/xampp/htdocs/videoconferencia/show_agenda.php",
+		"/C/xampp/htdocs/videoconferencia/admin_agenda.php",
+		"/C/Users/admin/AppData/Local/Temp/scp04583/var/www/videoconferencia/conexao.php",
+		"/C/Users/admin/AppData/Local/Temp/scp07275/var/www/videoconferencia/index.php",
+		"/C/Users/admin/AppData/Local/Temp/scp08418/var/www/videoconferencia/show_agenda.php",
+		"/C/Users/admin/Desktop/Agendamento VC/videoconferencia/conexao.php",
+		"/C/Users/admin/Desktop/Agendamento VC/videoconferencia/show_agenda.php",
+		"/C/Users/admin/AppData/Local/Temp/scp54947/var/www/news_10rm/noticia.php",
+		"/C/Users/admin/Desktop/Agendamento VC/videoconferencia/videoconferencia.sql",
+		"/C/Users/admin/Desktop/Agendamento VC/videoconferencia/backup da agenda de videoconferencia de 2011.sql",
+		"/C/Users/admin/AppData/Local/Temp/scp59285/var/www/news_10rm/style.css",
+		"/C/Users/admin/AppData/Local/Temp/scp58843/var/www/news_10rm/funcoes.php",
+		"/G/DETRAN/bin/sync.sh",
+		"/G/DETRAN/opt/JAVA/Util/removelib.sh",
+		"/G/DETRAN/opt/JAVA/replicador/compag.sh",
+		"/G/DETRAN/opt/JAVA/replicador/replicador.sh",
+		"/G/DETRAN/opt/JAVA/Axis2/gerarclientews.sh",
+		"/G/DETRAN/yurir/.pgpass",
+		"/G/DETRAN/yurir/.pgadmin3",
+		"/G/DETRAN/yurir/rsync_app/bin/backup_sinc.sh",
+		"/G/DETRAN/yurir/rsync_app/bin/sinc.sh",
+		"/G/DETRAN/yurir/rsync_app/bin/sinc_externo.sh",
+		"/G/DETRAN/yurir/ProjetosAntigos/meus_projetos/replicador/src/main/java/br/gov/ce/detran/principal/Replicador.java",
+		"/C/Users/admin/AppData/Local/Temp/scp52290/var/www/news_10rm/inserir_arquivos_db.php",
+		"/C/Users/admin/AppData/Local/Temp/scp45785/var/www/news_10rm/inserir_foto_db.php",
+		"/C/Users/admin/AppData/Local/Temp/scp21501/var/www/news_10rm/excluir_fotos.php",
+		"/C/Users/admin/AppData/Local/Temp/scp01851/var/www/news_10rm/noticia.php",
+		"/C/Users/admin/AppData/Local/Temp/scp56835/var/www/news_10rm/lista_noticias.php",
+		"/C/Users/admin/AppData/Local/Temp/scp25231/var/www/news_10rm/mysqlconecta.php",
+		"/C/Users/admin/AppData/Local/Temp/scp43721/var/www/news_10rm/inserir_foto.php",
+		"/C/Users/admin/AppData/Local/Temp/scp44639/var/www/news_10rm/upload_imagens.php",
+		"/C/Users/admin/AppData/Local/Temp/scp33008/var/www/news_10rm/inserir_arquivos.php",
+		"/C/Users/admin/AppData/Local/Temp/scp33702/var/www/news_10rm/inserir_arquivos_db.php",
+		"/C/Users/admin/AppData/Local/Temp/scp30480/var/www/news_10rm/noticia.php",
+		"/C/Users/admin/AppData/Local/Temp/scp44547/var/www/news_10rm/controle_noticias.php",
+		"/C/Users/admin/AppData/Local/Temp/scp45835/var/www/news_10rm/inserir_noticias.php",
+		"/C/Users/admin/AppData/Local/Temp/scp45313/var/www/news_10rm/inserir_noticias_db.php",
+		"/C/Users/admin/AppData/Local/Temp/scp43486/var/www/news_10rm/alterar_noticias_db.php",
+		"/C/Users/admin/AppData/Local/Temp/scp44238/var/www/news_10rm/alterar_noticias.php",
+		"/C/Users/admin/AppData/Local/Temp/scp32430/var/www/news_10rm/inserir_foto_db.php",
+		"/C/Users/admin/AppData/Local/Temp/scp45747/var/www/news_10rm/lista_noticias.php",
+		"/C/Users/admin/AppData/Local/Temp/scp45895/var/www/news_10rm/excluir_noticias.php",
+		"/C/Users/admin/AppData/Local/Temp/scp46745/var/www/news_10rm/excluir_noticia_confirma.php",
+		"/C/Users/admin/AppData/Local/Temp/scp46155/var/www/news_10rm/envia_fotos.php",
+		"/C/Users/admin/AppData/Local/Temp/scp46427/var/www/news_10rm/seleciona_fotos.php",
+		"/C/Users/admin/AppData/Local/Temp/scp45748/var/www/news_10rm/noticia.php",
+		"/C/Users/admin/AppData/Local/Temp/scp23199/var/www/news_10rm/excluir_noticias.php",
+		"/C/Users/admin/AppData/Local/Temp/scp11332/var/www/rot_sisobi/code/recebe_upload.php",
+		"/C/Users/admin/AppData/Local/Temp/scp37850/var/www/news_10rm/excluir_fotos.php",
+		"/C/Users/admin/AppData/Local/Temp/scp37039/var/www/news_10rm/excluir_noticias.php",
+		"/C/Users/admin/AppData/Local/Temp/scp21125/var/www/rot_sisobi/rel/relsisobinat_cpf.php",
+		"/C/Users/admin/AppData/Local/Temp/scp24254/var/www/rot_sisobi/code/config.php",
+		"/C/Users/admin/AppData/Local/Temp/scp14825/var/www/rot_sisobi/code/upload_form.php",
+		"/C/Users/admin/AppData/Local/Temp/scp09044/var/www/news_10rm/inserir_noticias.php",
+		"/C/Users/admin/AppData/Local/Temp/scp15417/var/www/news_10rm/inserir_noticias_db.php",
+		"/C/Users/admin/AppData/Local/Temp/scp22840/var/www/news_10rm/envia_fotos.php",
+		"/C/Users/admin/AppData/Local/Temp/scp27668/var/www/news_10rm/seleciona_fotos.php",
+		"/C/Users/admin/AppData/Local/Temp/scp30503/var/www/news_10rm/upload_imagens.php",
+		"/C/Users/admin/AppData/Local/Temp/scp37193/var/www/news_10rm/inserir_arquivos.php",
+		"/C/Users/admin/AppData/Local/Temp/scp39798/var/www/news_10rm/inserir_arquivos_db.php",
+		"/C/Users/admin/AppData/Local/Temp/scp00619/var/www/news_10rm/thumb.php",
+		"/C/Users/admin/Desktop/migracao_sped.sh",
+		"//10.100.8.9/Intranet/asp/noticias/avisos/popup.html",
+		"/C/Users/admin/Desktop/teste.php",
+		"/C/xampp/htdocs/agenda/mysqlconecta.php",
+		"/C/Users/admin/Desktop/atualiza_simatex.bat",
+		"/C/Users/admin/AppData/Local/Temp/scp17304/var/www/sisapag/code/militar_ativa_form.php",
+		"/C/Users/admin/AppData/Local/Temp/scp18323/var/www/sisapag/code/militar_ativa_action.php",
+		"/C/Users/admin/AppData/Local/Temp/scp08130/var/www/sisprotocolo/code/config.php",
+		"//10.100.8.9/sistemas/index.html",
+		"/C/Users/admin/AppData/Local/Temp/scp27497/var/www/rot_sisobi/code/config.php",
+		"/C/Users/admin/AppData/Local/Temp/scp19801/var/www/sisamr/code/common.php",
+		"/C/Users/admin/AppData/Local/Temp/scp19645/var/www/sisamr/code/config.php",
+		"/C/Users/admin/Desktop/SISTEMAS/sisapag/code/exame_form2.php",
+		"/C/Users/admin/Desktop/SISTEMAS/sisapag/code/exame_fusex_bravo_lista.php",
+		"/C/Users/admin/Desktop/SISTEMAS/sisapag/code/exame_fusex_listaa.php",
+		"/C/Users/admin/Desktop/SISTEMAS/sisapag/code/exame_lista.php",
+		"/C/Users/admin/Desktop/SISTEMAS/sisapag/code/exame_mapa_bravo_lista.php",
+		"/C/Users/admin/Desktop/SISTEMAS/sisapag/code/exame_mapa_lista.php",
+		"/C/Users/admin/Desktop/SISTEMAS/sisapag/code/exame_mapafusex_bravo_lista.php",
+		"/C/Users/admin/Desktop/SISTEMAS/sisapag/code/exame_mapafusex_lista.php",
+		"/C/Users/admin/Desktop/SISTEMAS/sisapag/code/exame_pagamento_lista.php",
+		"/C/Users/admin/Desktop/SISTEMAS/sisapag/code/exame_pasta_lista.php",
+		"/C/Users/admin/Desktop/SISTEMAS/sisapag/code/exame_preescolar_lista.php",
+		"/C/Users/admin/Desktop/SISTEMAS/sisapag/code/exame_rejeitados_bravo_lista.php",
+		"/C/Users/admin/Desktop/SISTEMAS/sisapag/code/exame_rejeitados_listaa.php",
+		"/C/Users/admin/Desktop/SISTEMAS/sisapag/code/ficha_auxiliar_lista.php",
+		"/C/Users/admin/Desktop/SISTEMAS/sisapag/index.php",
+		"/C/Users/admin/Desktop/SISTEMAS/sisapag/login.php",
+		"/C/Users/admin/Desktop/SISTEMAS/exame_analisados_lista.php",
+		"/C/Users/admin/AppData/Local/Temp/scp10166/var/www/sisapag/code/exame_lista.php",
+		"/C/Users/admin/AppData/Local/Temp/scp10589/var/www/sisapag/code/exame_analisados_lista.php",
+		"/C/Users/admin/AppData/Local/Temp/scp11703/var/www/sisapag/code/exame_ficha_lista.php",
+		"/C/Users/admin/Desktop/SISTEMAS/sisapag/code/exame_ficha_lista.php",
+		"/C/Users/admin/Desktop/SISTEMAS/sisapag/code/exame_equipe_lista.php",
+		"/C/Users/admin/Desktop/SISTEMAS/sisapag/code/exame_bravo_analisados_lista.php",
+		"/C/Users/admin/Desktop/SISTEMAS/sisapag/code/exame_auxtransporte_lista.php",
+		"/C/Users/admin/Desktop/SISTEMAS/sisapag/code/exame_auxpreescolar_lista.php",
+		"/C/Users/admin/Desktop/SISTEMAS/sisapag/code/exame_analisados_lista.php",
+		"/C/Users/admin/AppData/Local/Temp/scp40331/var/www/sisapag/code/analisados_exame_lista.php",
+		"/C/Users/admin/AppData/Local/Temp/scp12799/var/www/sisapag/code/exame_fusex_listaa.php",
+		"/C/Users/admin/Documents/php-getting-started/composer.json",
+		"/C/Users/admin/Documents/RailsProjects/cautela/config/database.yml",
+		"/Users/yurifialho/Sites/sip/app/View/Posts/add.ctp"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"C:\\Users\\admin\\AppData\\Local\\Temp\\csp44639\\var\\www\\news_10rm",
+			"C:\\Users\\admin\\Desktop\\SISTEMAS\\sisapag",
+			"/Users/yurifialho/Sites/sip",
+			"/Users/yurifialho/Sites/cakephp"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"favicon",
+			"str_replace",
+			"Exame",
+			"input",
+			"pagina",
+			"navigation",
+			"’",
+			"validate",
+			"Errors",
+			"getVariables()",
+			"setting",
+			"page",
+			".php",
+			"sql",
+			"require",
+			"login.php",
+			"session_start"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"exame",
+			"'"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "includes/header.php",
+					"settings":
+					{
+						"buffer_size": 3186,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1517,
+								1517
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 315.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "login.php",
+					"settings":
+					{
+						"buffer_size": 2861,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2353,
+								2353
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 720.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"route",
+				"config/routes.rb"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": false,
+	"side_bar_visible": true,
+	"side_bar_width": 218.0,
+	"status_bar_visible": true
+}
