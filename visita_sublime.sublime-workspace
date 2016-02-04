@@ -124,18 +124,10 @@
 	"buffers":
 	[
 		{
-			"file": "includes/header.php",
+			"file": "/C/Users/admin/Desktop/teste.html",
 			"settings":
 			{
-				"buffer_size": 3186,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "login.php",
-			"settings":
-			{
-				"buffer_size": 2861,
+				"buffer_size": 25220,
 				"line_ending": "Windows"
 			}
 		}
@@ -164,7 +156,9 @@
 	},
 	"file_history":
 	[
+		"/C/xampp/htdocs/visita/includes/header.php",
 		"/C/xampp/htdocs/visita/login.php",
+		"/C/Users/admin/Desktop/teste2.html",
 		"/C/xampp/htdocs/visita/views/reserva/reserva_form.php",
 		"/C/xampp/htdocs/visita/controllers/reservacontroller.php",
 		"/C/xampp/htdocs/visita/models/Disponibilidade.php",
@@ -172,7 +166,6 @@
 		"/C/xampp/htdocs/visita/views/reserva/reserva_lista.php",
 		"/C/xampp/htdocs/visita/views/disponibilidade/disponibilidade_form.php",
 		"/C/xampp/htdocs/visita/views/disponibilidade/disponibilidade_lista.php",
-		"/C/xampp/htdocs/visita/includes/header.php",
 		"/C/xampp/htdocs/visita/includes/database.config.php",
 		"/C/xampp/htdocs/visita/controllers/disponibilidadecontroller.php",
 		"/C/xampp/htdocs/visita/controllers/cautelacontroller.php",
@@ -290,8 +283,7 @@
 		"/C/Users/admin/AppData/Local/Temp/scp40331/var/www/sisapag/code/analisados_exame_lista.php",
 		"/C/Users/admin/AppData/Local/Temp/scp12799/var/www/sisapag/code/exame_fusex_listaa.php",
 		"/C/Users/admin/Documents/php-getting-started/composer.json",
-		"/C/Users/admin/Documents/RailsProjects/cautela/config/database.yml",
-		"/Users/yurifialho/Sites/sip/app/View/Posts/add.ctp"
+		"/C/Users/admin/Documents/RailsProjects/cautela/config/database.yml"
 	],
 	"find":
 	{
@@ -349,61 +341,31 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "includes/header.php",
+					"file": "/C/Users/admin/Desktop/teste.html",
 					"settings":
 					{
-						"buffer_size": 3186,
+						"buffer_size": 25220,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1517,
-								1517
+								25220,
+								10071
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 315.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "login.php",
-					"settings":
-					{
-						"buffer_size": 2861,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2353,
-								2353
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 720.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

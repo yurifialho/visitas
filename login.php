@@ -39,14 +39,16 @@
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
-    <meta charset="utf-8">
+    <meta charset="ISO-8859-1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="">
-
+    <meta name="author" content="Yuri Fialho">
+    <?php 
+      echo "<link rel='shortcut icon' type='image/x-icon' href='".$BASE."images/10rm.ico'></link>";
+    ?>
     <title>VISITA - LOGIN</title>
 
     <!-- Bootstrap core CSS -->
@@ -80,8 +82,12 @@
         <input type="password" id="senha" name="senha" class="form-control" placeholder="Senha" required>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
       </form>
-
     </div> <!-- /container -->
-   
+    
+   <nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container" style="padding-bottom: 1%;">
+    Copyright © 2016 - 10ª Região Militar - Seção de Tecnologia e Informática
+  </div>
+</nav>
   </body>
 </html>

@@ -9,7 +9,7 @@
 #
 #--------------------------------------------------------------------------
 
-  include      "../../includes/header.php"; 
+  include      "../../includes/header_internet.php"; 
 
 ?>
 
@@ -33,12 +33,12 @@
 ?>
 
 <div class="panel panel-default">
-  <div class="panel-heading">Reservar</div>
+  <div class="panel-heading">Agendar Visitação</div>
   <div class="panel-body">
     <div class="alert alert-warning" role="alert">
       A reserva está sujeita a análise e aprovação, verifique a confirmação da reserva no site. Obrigado por nos visitar!
     </div>
-    <form role="form" class="form-horizontal" action="../../controllers/reservacontroller.php" method="post" >
+    <form role="form" class="form-horizontal" action="../../controllers/internetreservacontroller.php" method="post" >
     	<input type="hidden" id="action" name="action" value="<?php echo $_GET['action']; ?>"/>
     	<input type="hidden" id="disponibilidade_id" name="disponibilidade_id" value="<?php echo $_GET['id']; ?>"/>
       <input type="hidden" id="id" name="id" value="<?php echo $reserva->id != NULL ? $reserva->id : "" ?>"/>
@@ -99,7 +99,7 @@
   		<div class="form-group">
   			<div class="col-sm-offset-2 col-sm-10">
 		  		<button type="submit" class="btn btn-success">Salvar</button>
-	  			<a href="reserva_lista.php">
+	  			<a href="internet_reserva_lista.php">
 	  				<button type="button" class="btn btn-danger">Voltar</button>
 	  			</a>
   			</div>

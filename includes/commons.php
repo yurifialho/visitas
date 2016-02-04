@@ -8,6 +8,7 @@
 # @contact: yurirfialho@gmail.com
 #
 #--------------------------------------------------------------------------
+$BASE = "/visita/";
 
 $map_mes = array(
 	'1' => 'Janeiro',

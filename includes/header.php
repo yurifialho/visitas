@@ -10,8 +10,6 @@
 #--------------------------------------------------------------------------
   require_once "commons.php";
 	require_once "database.config.php";
-	
-	$BASE = "/visita/";
     
 	if(session_id() == '' || !isset($_SESSION)) {		
 		session_start();
@@ -24,9 +22,13 @@
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-	
+	  <meta charset="ISO-8859-1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Yuri Fialho">
 <?php
 	echo "<script src='".$BASE."js/jquery-1.11.1.min.js'></script>";
 	echo "<script src='".$BASE."js/bootstrap.min.js'></script>";
@@ -62,15 +64,17 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cadastro Básico <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="<?php echo $BASE ?>views/disponibilidade/disponibilidade_lista.php">Disponibilidade</a></li>
+            <li><a href="<?php echo $BASE ?>views/usuario/usuario_lista.php">Usuario</a></li>
           </ul>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Controle Reserva<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="<?php echo $BASE ?>views/reserva/reserva_lista.php">Reserva</a></li>
+            <li><a href="<?php echo $BASE ?>views/internet/internet_reserva_lista.php">Reserva - Modo Internet</a></li>
           </ul>
         </li>
-        <li><a href="<?php echo $BASE ?>logout.php">Logout ( <?php echo $_SESSION['nomeusuario'] ?> )</a></li>
+        <li><a href="<?php echo $BASE ?>logout.php">Sair ( <?php echo $_SESSION['nomeusuario'] ?> )</a></li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
