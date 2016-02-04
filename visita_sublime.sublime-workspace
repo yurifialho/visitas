@@ -123,14 +123,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "/C/Users/admin/Desktop/teste.html",
-			"settings":
-			{
-				"buffer_size": 25220,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -156,20 +148,31 @@
 	},
 	"file_history":
 	[
+		"/C/xampp/htdocs/visita/logout.php",
+		"/C/xampp/htdocs/visita/views/usuario/usuario_lista.php",
 		"/C/xampp/htdocs/visita/includes/header.php",
-		"/C/xampp/htdocs/visita/login.php",
-		"/C/Users/admin/Desktop/teste2.html",
+		"/C/xampp/htdocs/visita/views/usuario/usuario_form.php",
+		"/C/xampp/htdocs/visita/controllers/usuariocontroller.php",
+		"/C/xampp/htdocs/visita/views/internet/internet_reserva_lista.php",
+		"/C/xampp/htdocs/visita/includes/header_internet.php",
+		"/C/xampp/htdocs/visita/controllers/internetreservacontroller.php",
+		"/C/xampp/htdocs/visita/views/internet/internet_reserva_form.php",
 		"/C/xampp/htdocs/visita/views/reserva/reserva_form.php",
+		"/C/xampp/htdocs/visita/views/disponibilidade/disponibilidade_form.php",
+		"/C/xampp/htdocs/visita/includes/footer.php",
+		"/C/xampp/htdocs/visita/login.php",
+		"/C/xampp/htdocs/visita/includes/commons.php",
+		"/C/xampp/htdocs/visita/views/internet/reserva_lista.php",
+		"/C/Users/admin/Desktop/teste.html",
+		"/C/Users/admin/Desktop/teste2.html",
 		"/C/xampp/htdocs/visita/controllers/reservacontroller.php",
 		"/C/xampp/htdocs/visita/models/Disponibilidade.php",
 		"/C/xampp/htdocs/visita/models/Reserva.php",
 		"/C/xampp/htdocs/visita/views/reserva/reserva_lista.php",
-		"/C/xampp/htdocs/visita/views/disponibilidade/disponibilidade_form.php",
 		"/C/xampp/htdocs/visita/views/disponibilidade/disponibilidade_lista.php",
 		"/C/xampp/htdocs/visita/includes/database.config.php",
 		"/C/xampp/htdocs/visita/controllers/disponibilidadecontroller.php",
 		"/C/xampp/htdocs/visita/controllers/cautelacontroller.php",
-		"/C/xampp/htdocs/visita/includes/commons.php",
 		"/C/xampp/htdocs/visita/includes/ldap.php",
 		"/C/xampp/htdocs/visita/includes/messages.php",
 		"/C/xampp/htdocs/visita/models/ReservaSituacao.php",
@@ -177,7 +180,6 @@
 		"/C/xampp/htdocs/visita/views/item/item_lista.php",
 		"/C/xampp/htdocs/visita/models/Item.php",
 		"/C/xampp/htdocs/visita/models/Local.php",
-		"/C/Users/admin/Desktop/teste.html",
 		"//10.100.8.9/Intranet/index.asp",
 		"//10.100.8.9/Intranet/asp/links_outros.asp",
 		"//10.100.8.9/Intranet/principal.asp",
@@ -273,17 +275,7 @@
 		"/C/Users/admin/Desktop/SISTEMAS/exame_analisados_lista.php",
 		"/C/Users/admin/AppData/Local/Temp/scp10166/var/www/sisapag/code/exame_lista.php",
 		"/C/Users/admin/AppData/Local/Temp/scp10589/var/www/sisapag/code/exame_analisados_lista.php",
-		"/C/Users/admin/AppData/Local/Temp/scp11703/var/www/sisapag/code/exame_ficha_lista.php",
-		"/C/Users/admin/Desktop/SISTEMAS/sisapag/code/exame_ficha_lista.php",
-		"/C/Users/admin/Desktop/SISTEMAS/sisapag/code/exame_equipe_lista.php",
-		"/C/Users/admin/Desktop/SISTEMAS/sisapag/code/exame_bravo_analisados_lista.php",
-		"/C/Users/admin/Desktop/SISTEMAS/sisapag/code/exame_auxtransporte_lista.php",
-		"/C/Users/admin/Desktop/SISTEMAS/sisapag/code/exame_auxpreescolar_lista.php",
-		"/C/Users/admin/Desktop/SISTEMAS/sisapag/code/exame_analisados_lista.php",
-		"/C/Users/admin/AppData/Local/Temp/scp40331/var/www/sisapag/code/analisados_exame_lista.php",
-		"/C/Users/admin/AppData/Local/Temp/scp12799/var/www/sisapag/code/exame_fusex_listaa.php",
-		"/C/Users/admin/Documents/php-getting-started/composer.json",
-		"/C/Users/admin/Documents/RailsProjects/cautela/config/database.yml"
+		"/C/Users/admin/AppData/Local/Temp/scp11703/var/www/sisapag/code/exame_ficha_lista.php"
 	],
 	"find":
 	{
@@ -341,35 +333,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/C/Users/admin/Desktop/teste.html",
-					"settings":
-					{
-						"buffer_size": 25220,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								25220,
-								10071
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
