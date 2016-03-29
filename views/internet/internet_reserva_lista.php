@@ -28,7 +28,7 @@
           <?php 
             $anopassado = date('Y') - 1;
             for($i = $anopassado; $i <= $anopassado + 2; $i++) { ?>
-              <option value="<?php echo $i ?>" <?php echo  $i == $_GET['ano'] || $i == date('Y') ? 'selected' : '' ?> ><?php echo $i ?></option>
+              <option value="<?php echo $i ?>" <?php echo  isset($_GET['ano']) && ($i == $_GET['ano'] || $i == date('Y')) ? 'selected' : '' ?> ><?php echo $i ?></option>
           <?php } ?>
           </select>
       </div>
@@ -36,7 +36,7 @@
         <select id="mes" name="mes" class="form-control">
           <?php 
             foreach ($map_mes as $mes_n => $mes_v) { ?>
-              <option value="<?php echo $mes_n ?>" <?php echo $mes_n == $_GET['mes'] || $mes_n == date('m') ? "selected" : "" ?>><?php echo $mes_v ?></option>
+              <option value="<?php echo $mes_n ?>" <?php echo isset($_GET['mes']) && ($mes_n == $_GET['mes'] || $mes_n == date('m')) ? "selected" : "" ?>><?php echo $mes_v ?></option>
           <?php } ?>
           </select>
       </div>

@@ -10,8 +10,8 @@
 #--------------------------------------------------------------------------
 	
 	#DB username
-	$username = "root";
-	$password = "";
+	$username = "tenfialho";
+	$password = "tenfialho";
 	$host	  = "127.0.0.1";
 	$database = "visita";
 

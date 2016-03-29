@@ -62,6 +62,8 @@
       	<span class="glyphicon glyphicon-search">&nbsp;</span>Buscar</button>
       <button type="submit" class="btn btn-success" onclick="jQuery('#action').val('new')">
       	<span class="glyphicon glyphicon-floppy-disk">&nbsp;</span>Salvar</button>
+      <button type="submit" class="btn btn-warning" onclick="jQuery('#action').val('gerarDisponibilidadeMensal')">
+        <span class="glyphicon glyphicon-flash">&nbsp;</span>Preencher Mês</button>
     </form>
     </div>
     </div>

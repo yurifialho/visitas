@@ -1,9 +1,9 @@
 <?php
 #--------------------------------------------------------------------------
-# USUARIO.PHP
+# TRANSPORTETIPO.PHP
 #--------------------------------------------------------------------------
 #
-#	@author: Yuri Fialho - 2บ TEN FIALHO
+#	@author: Yuri Fialho - 2ยบ TEN FIALHO
 #	@since: 03/02/2016
 #	@contact: yurirfialho@gmail.com
 #
@@ -11,13 +11,14 @@
 
 require_once dirname(__FILE__) . '/../libs/phpactiverecord/ActiveRecord.php';
 
-class Usuario extends ActiveRecord\Model {
+class TransporteTipo extends ActiveRecord\Model {
 	#config
-	static $table_name = 'usuario';
+	static $table_name = 'transporte_tipo';
 	#relacionamentos
 	static $has_many = array(
-			array('reservas','disponibilidades')
-		);	
+			array('reservas')
+		);
+
 }
 
 ?>

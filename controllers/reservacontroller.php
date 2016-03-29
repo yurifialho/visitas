@@ -18,6 +18,9 @@
 		$usuarioid = $_SESSION['idusuario'];
 	}
 
+	$msg="";
+	$msg_erro="";
+
 	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     	$action     = $_POST['action'];
 		$id 	    = isset($_POST['id']) ? $_POST['id'] : NULL;
@@ -30,6 +33,8 @@
 		$quantidade = isset($_POST['quantidade']) ? $_POST['quantidade'] : NULL;
 		$ano        = isset($_POST['ano']) ? $_POST['ano'] : NULL;
 		$mes        = isset($_POST['mes']) ? $_POST['mes'] : NULL;
+		$transp		= isset($_POST['transportetipo']) ? $_POST['transportetipo'] : NULL;
+		$nrtransp	= isset($_POST['nrtransp']) ? $_POST['nrtransp'] : NULL;
 	} else {
 		$action    = $_GET['action'];
 		$id 	   = $_GET['id'];
@@ -78,6 +83,8 @@
 			$reserva->celular = $celular;
 			$reserva->email = $email;
 			$reserva->quantidade = $quantidade;
+			$reserva->transporte_tipo_id = $transp;
+			$reserva->transporte_numero = $nrtransp;
 			
 			if($reserva->save()){
 				$msg = "Objeto salvo com sucesso!";
@@ -111,7 +118,9 @@
 		$reserva->quantidade = $quantidade;
 		$reserva->disponibilidade_id = $disponibilidade_id;
 		$reserva->reserva_situacao_id = 3; #Aguardando Confirmacao
-		
+		$reserva->transporte_tipo_id = $transp;
+		$reserva->transporte_numero = $nrtransp;
+
 		if($reserva->save()){
 			$msg = "Objeto salvo com sucesso! A reserva encontra-se em análise para aprovação.";
 		} else {

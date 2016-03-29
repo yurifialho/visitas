@@ -96,6 +96,27 @@
                value="<?php echo str_pad($reserva->quantidade, 3, "0", STR_PAD_LEFT) ?>" />
         </div>
       </div>
+      <div class="form-group">
+        <label for="hora" class="col-sm-2 control-label">Transporte</label>
+        <div class="col-sm-10">
+          <select id="transportetipo" name="transportetipo" class="form-control" required="true">
+          <option value="">Selecione o transporte que a entidade virá.</option>
+          <?php 
+            $tipo_transporte = TransporteTipo::find('all');
+            foreach($tipo_transporte as $transp) { ?>
+              <option value="<?php echo $transp->id; ?>" <?php echo $transp->id == $reserva->transporte->id ? 'selected' : ''; ?> ><?php echo $transp->descricao; ?></option>
+          <?php } ?>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="nrtransp" class="col-sm-2 control-label">Nr. Transporte</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" required="true"
+               placeholder="Quantas veículos virão?" id="nrtransp" name="nrtransp"
+               value="<?php echo str_pad($reserva->transporte_numero, 3, "0", STR_PAD_LEFT) ?>" />
+        </div>
+      </div>
   		<div class="form-group">
   			<div class="col-sm-offset-2 col-sm-10">
 		  		<button type="submit" class="btn btn-success">Salvar</button>

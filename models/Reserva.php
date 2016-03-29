@@ -18,6 +18,8 @@ class Reserva extends ActiveRecord\Model {
 	static $belongs_to = array(
 		array('situacao', 'class_name' => 'ReservaSituacao', 
 								  'foreign_key' => 'reserva_situacao_id'),
+		array('transporte', 'class_name' => 'TransporteTipo', 
+								  'foreign_key' => 'transporte_tipo_id'),
 		array('usuario', 'class_name' => 'Usuario', 
 								  'foreign_key' => 'usuario_id'),
 		array('disponibilidade')

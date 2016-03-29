@@ -79,6 +79,27 @@
 				$msg_erro = "Nao foi possivel salvar objeto!";
 			}
 		}
+	} elseif($action == "gerarDisponibilidadeMensal") {
+		if($ano == null || $ano == "" || $mes == null || $mes == "") {
+			$msg_erro = "Ano e mês são obrigatórios para gerar as disponibilidades!";
+		} else {
+			$data_inicial = "$ano-$mes-01";
+			$fim = date("t", strtotime($a_date));
+
+			for($i =1; $i < $fim; $i++) {
+				$nova_data = "$ano-$mes-$i";
+				$data_disponivel = date("Y-m-d", strtotime($nova_data));
+				for($hora = 8; $hora <= 17; $hora++) {
+					for($min = 0; $min <= 30; $min+=30) {
+						$dispo = new Disponibilidade();
+						$dispo->data = $nova_data;
+						$dispo->hora = "$hora:$min";
+
+						$dispo->save();
+					}
+				}
+			}
+		}
 	}  	
 	
 	header('Location: '."../views/disponibilidade/disponibilidade_lista.php?msg=$msg&msg_erro=$msg_erro&a=1$query");	

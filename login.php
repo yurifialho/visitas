@@ -16,7 +16,7 @@ if(!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] == ""){
 
   session_start(); 
   
-
+  require_once "includes/commons.php";
   require_once "includes/database.config.php";
 	
   $url_entrada = "views/reserva/reserva_lista.php";
