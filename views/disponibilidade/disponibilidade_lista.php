@@ -11,6 +11,11 @@
 
   include      "../../includes/header.php"; 
 
+  #processamento de requisicoes
+  $ano  = preg_replace('/[^[:digit:]_]/', '',$_GET['ano']);
+  $mes  = preg_replace('/[^[:digit:]_]/', '',$_GET['mes']);
+  $data = $_GET['data'];#preg_replace('/[^[:digit:]_]/', '',$_GET['data']);
+  $hora = $_GET['hora'];#preg_replace('/[^0-9\/_]/', '',$_GET['hora']);
 ?>
 
 <body>
@@ -35,18 +40,23 @@
           <?php 
             $anopassado = date('Y') - 1;
             for($i = $anopassado; $i <= $anopassado + 2; $i++) { ?>
-              <option value="<?php echo $i ?>" <?php echo $i == date('Y') ? 'selected' : '' ?> ><?php echo $i ?></option>
+              <option value="<?php echo $i ?>" <?php echo ($ano != '' && $i == $ano) || $i == date('Y') ? 'selected' : '' ?> ><?php echo $i ?></option>
           <?php } ?>
           </select>
       </div>
       <div class="form-group">
         <select id="mes" name="mes" class="form-control">
-          <option value="">Mês</option>
           <?php 
             foreach ($map_mes as $mes_n => $mes_v) { ?>
-              <option value="<?php echo $mes_n ?>"><?php echo $mes_v ?></option>
+              <option value="<?php echo $mes_n ?>"
+               <?php 
+                  if($mes != '') echo($mes_n == $mes ? "selected" : "");
+                  else echo($mes_n == date('m') ? "selected" : "");
+               ?>>
+                <?php echo $mes_v ?>
+              </option>
           <?php } ?>
-          </select>
+        </select>
       </div>
       <div class="form-group">
           <input type="text"
@@ -78,25 +88,39 @@
     </thead>
     <tbody>
       <?php
-      	$query = "1=1 ";
+        $conditions = array();
+      	$query = "";
+        $param = array();
        
-      	if(isset($_GET['data'])) {
-      		$patrimonio = $_GET['data'];
-      		$query.=" and data = '$data' " ;
+      	if($data != '') {
+          if(sizeof($param) > 0) $query .= " and ";
+      		$query.=" data = '?' " ;
+          array_push($param, array($data));
       	}
-      	if(isset($_GET['hora'])) {
-      		$nome = $_GET['hora'];
-      		$query.=" and hora = '$hora' ";
+      	if($hora != '') {
+      		if(sizeof($param) > 0) $query .= " and ";
+          $query.=" hora = '?' " ;
+          array_push($param, array($hora));
       	}
-        if (!isset($_GET['data']) && isset($_GET['ano'])) {
-          $ano = $_GET['ano'];
-          $query.=" and extract(year from data) = $ano ";
+        if ($data == '' && $ano != '') {
+          if(sizeof($param) > 0) $query .= " and ";
+          $query.=" extract(year from data) = ? " ;
+          array_push($param, array($ano));
         }
-        if (!isset($_GET['data']) && isset($_GET['mes'])) {
-          $mes = $_GET['mes'];
-          $query.=" and extract(month from data) = $mes ";
+        if ($data == '' && $mes != '') {
+          if(sizeof($param) > 0) $query .= " and ";
+          $query.=" extract(month from data) = ? " ;
+          array_push($param, array($mes));
         }
-      	foreach (Disponibilidade::find('all', array('conditions' => $query, 'order' => 'data asc, hora asc')) as $dispo) { ?>
+
+        array_push($conditions, $query);
+        foreach ($param as $value) {
+          array_push($conditions, $value);
+        }
+
+        print_r($conditions);
+
+      	foreach (Disponibilidade::all(array('conditions' => $conditions, 'order' => 'data asc, hora asc')) as $dispo) { ?>
       <tr>
         <td><?php echo $dispo->id ?></td>
         <td><?php echo $dispo->data->format('d/m/Y') ?></td>

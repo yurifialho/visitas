@@ -104,7 +104,7 @@
           <?php 
             $tipo_transporte = TransporteTipo::find('all');
             foreach($tipo_transporte as $transp) { ?>
-              <option value="<?php echo $transp->id; ?>" <?php echo $transp->id == $reserva->transporte->id ? 'selected' : ''; ?> ><?php echo $transp->descricao; ?></option>
+              <option value="<?php echo $transp->id; ?>" <?php echo $transp->id == $reserva->transporte_tipo_id ? 'selected' : ''; ?> ><?php echo $transp->descricao; ?></option>
           <?php } ?>
           </select>
         </div>
@@ -115,6 +115,19 @@
           <input type="text" class="form-control" required="true"
                placeholder="Quantas veículos virão?" id="nrtransp" name="nrtransp"
                value="<?php echo str_pad($reserva->transporte_numero, 3, "0", STR_PAD_LEFT) ?>" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="escolaridadetipo" class="col-sm-2 control-label">Escolaridade</label>
+        <div class="col-sm-10">
+          <select id="escolaridadetipo" name="escolaridadetipo" class="form-control" required="true">
+          <option value="">Selecione a escolaridade do grupo que virá.</option>
+          <?php 
+            $tipo_escolaridade = EscolaridadeTipo::find('all');
+            foreach($tipo_escolaridade as $escola) { ?>
+              <option value="<?php echo $escola->id; ?>" <?php echo $escola->id == $reserva->escolaridade_tipo_id  ? 'selected' : ''; ?> ><?php echo $escola->descricao; ?></option>
+          <?php } ?>
+          </select>
         </div>
       </div>
   		<div class="form-group">

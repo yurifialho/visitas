@@ -11,6 +11,10 @@
 
   include      "../../includes/header.php"; 
 
+  #processamento de requisicoes
+  $ano = preg_replace('/[^[:digit:]_]/', '',$_GET['ano']);
+  $mes = preg_replace('/[^[:digit:]_]/', '',$_GET['mes']);
+
 ?>
 
 <body>
@@ -59,25 +63,16 @@
     </thead>
     <tbody>
       <?php
-      	$query = "1=1 ";
+      	$query = 'extract(year from data) = ? and extract(month from data) = ? ';
        
-      	if(isset($_GET['data'])) {
-      		$patrimonio = $_GET['data'];
-      		$query.=" and data = '$data' " ;
-      	}
-      	if(isset($_GET['hora'])) {
-      		$nome = $_GET['hora'];
-      		$query.=" and hora = '$hora' ";
-      	}
-        if (!isset($_GET['data']) && isset($_GET['ano'])) {
-          $ano = $_GET['ano'];
-          $query.=" and extract(year from data) = $ano ";
+        if (!isset($ano)) {
+          $ano = date('Y');
         }
-        if (!isset($_GET['data']) && isset($_GET['mes'])) {
-          $mes = $_GET['mes'];
-          $query.=" and extract(month from data) = $mes ";
+        if (!isset($mes)) {
+          $mes = date('m');
         }
-      	foreach (Disponibilidade::find('all', array('conditions' => $query, 'order' => 'data asc, hora asc')) as $dispo) { ?>
+
+      	foreach (Disponibilidade::all(array('conditions' => array($query, $ano, $mes), 'order' => 'data asc, hora asc')) as $dispo) { ?>
       <tr>
         <td><?php echo $dispo->id ?></td>
         <td><?php echo $dispo->data->format('d/m/Y') ?> <?php echo $dispo->hora ?></td>

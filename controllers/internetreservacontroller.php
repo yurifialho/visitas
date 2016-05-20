@@ -1,6 +1,6 @@
 <?php
 #--------------------------------------------------------------------------
-# reservacontroller.php
+# internetreservacontroller.php
 #--------------------------------------------------------------------------
 #
 #	@author: Yuri Fialho - 2º TEN FIALHO
@@ -11,6 +11,10 @@
 # Recebe as requisicoes da view e trata.
 #-------------------------------------------------------------------------- 
 	require_once "../includes/database.config.php";
+	require_once "../helpers/mail_helper.php";
+	require_once "../helpers/application_helper.php";
+	require_once "../helpers/route_helper.php";
+	include 	 "../libs/recaptcha/autoload.php";
 
 	session_start();
 	
@@ -18,8 +22,20 @@
 		$usuarioid = $_SESSION['idusuario'];
 	}
 
-	$msg="";
-	$msg_erro="";
+	$router = new RouteHelper("../views/internet/internet_reserva_lista.php");
+	
+	function validateRecaptch() {
+		$siteKey = '6Lc1wx8TAAAAABU2y3ysPDDt7B-AmCRFJh-1cJhS';
+		$secret = '6Lc1wx8TAAAAAPElHWw9hGSbz52VhjR6V0gl3cfm';
+		$recaptcha = new \ReCaptcha\ReCaptcha($secret);
+		$resp = $recaptcha->verify($_POST['g-recaptcha-response'], $_SERVER['REMOTE_ADDR']);
+
+		if($resp->isSuccess()) {
+			return 1;
+		} else {
+			return 0;
+		}
+	}
 
 	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     	$action     = $_POST['action'];
@@ -35,47 +51,73 @@
 		$mes        = isset($_POST['mes']) ? $_POST['mes'] : NULL;
 		$transp		= isset($_POST['transportetipo']) ? $_POST['transportetipo'] : NULL;
 		$nrtransp	= isset($_POST['nrtransp']) ? $_POST['nrtransp'] : NULL;
+		$escolaridade = isset($_POST['escolaridadetipo']) ? $_POST['escolaridadetipo'] : NULL;
 	} else {
 		$action    = $_GET['action'];
 		$id 	   = $_GET['id'];
 		$disponibilidade_id = isset($_GET['disponibilidade_id']) ? $_GET['disponibilidade_id'] : NULL;
 	}
 	
-	$query = "";
 	if($action == "index") {
-		if($ano != NULL){
-			$query .= "&ano=$ano";
+		#validar os paramentros informados
+		if($ano != NULL && isNumeric($ano)){
+			$router->addParam("ano", $ano);
+		} else {
+			$router->addMsgErro("Ano informado inválido.");
 		}
-		if($mes != NULL){
-			$query .= "&mes=$mes";
+		if($mes != NULL && isNumeric($mes)){
+			$router->addParam("mes", $mes);
+		} else {
+			$router->addMsgErro("Mês informado inválido.");
 		}
+		$router->redirect();
+		return;
 	} elseif($action == "agendar") {
+		if(!validateRecaptch()) {
+			$router->addMsgErro("Código não confere com a imagem!");
+			$router->redirect(); return;
+		}
+
+		#quantidade de visitante tem que ser maior que 10.
+		if(isset($quantidade) && $quantidade >= 10) {
+			$router->addMsgErro("Quantidade de pessoas tem que ser maior que 10!");
+			$router->redirect(); return;
+		}
+		
 		$dispo = Disponibilidade::find($disponibilidade_id);
 
 		if($dispo != null && $dispo->reserva == null) {
-			$reserva = new Reserva();
-			$reserva->entidade = $entidade;
-			$reserva->nome = $nome;
-			$reserva->telefone = $telefone;
-			$reserva->celular = $celular;
-			$reserva->email = $email;
-			$reserva->quantidade = $quantidade;
-			$reserva->disponibilidade_id = $disponibilidade_id;
-			$reserva->reserva_situacao_id = 3; #Aguardando Confirmacao
-			$reserva->transporte_tipo_id = $transp;
-			$reserva->transporte_numero = $nrtransp;
-			
-			if($reserva->save()){
-				$msg = "Objeto salvo com sucesso! A reserva encontra-se em análise para aprovação.";
-			} else {
-				$msg_erro = "Nao foi possivel salvar objeto!";
-			}
-		} else {
-			$msg_erro = "Essa data já encontra-se reservada por outra pessoa, por favor tente agendar em outra data!";	
+			$router->addMsgErro("Essa data já encontra-se reservada por outra pessoa, por favor tente agendar em outra data!");
+			$router->redirect(); return;
 		}
-		
-	}  	
-	
-	header('Location: '."../views/internet/internet_reserva_lista.php?msg=$msg&msg_erro=$msg_erro&a=1$query");	
-	
+				
+		$reserva = new Reserva();
+		$reserva->entidade = $entidade;
+		$reserva->nome = $nome;
+		$reserva->telefone = $telefone;
+		$reserva->celular = $celular;
+		$reserva->email = $email;
+		$reserva->quantidade = $quantidade;
+		$reserva->disponibilidade_id = $disponibilidade_id;
+		$reserva->reserva_situacao_id = 3; #Aguardando Confirmacao
+		$reserva->transporte_tipo_id = $transp;
+		$reserva->transporte_numero = $nrtransp;
+		$reserva->escolaridade_tipo_id = $escolaridade;
+			
+		if($reserva->save()){
+			$router->addMsg("Objeto salvo com sucesso! A reserva encontra-se em análise para aprovação.");
+
+			$mail = new MailHelper();
+			$mail->sendAgendamento($email, $entidade, $reserva->disponibilidade->data,
+					$reserva->disponibilidade->hora);
+
+		} else {
+			$router->addMsgErro("Nao foi possivel salvar objeto!");
+		}
+					
+		$router->redirect(); return;
+	} else {
+		$router->addMsgErro("Operação não suportada!");
+		$router->redirect(); return;
+	}  		
 ?>

@@ -11,6 +11,8 @@
 # Recebe as requisicoes da view e trata.
 #-------------------------------------------------------------------------- 
 	require_once "../includes/database.config.php";
+	require_once "../helpers/mail_helper.php";
+	require_once "../helpers/application_helper.php";
 
 	session_start();
 	
@@ -35,9 +37,10 @@
 		$mes        = isset($_POST['mes']) ? $_POST['mes'] : NULL;
 		$transp		= isset($_POST['transportetipo']) ? $_POST['transportetipo'] : NULL;
 		$nrtransp	= isset($_POST['nrtransp']) ? $_POST['nrtransp'] : NULL;
+		$escolaridade = isset($_POST['escolaridadetipo']) ? $_POST['escolaridadetipo'] : NULL;
 	} else {
-		$action    = $_GET['action'];
-		$id 	   = $_GET['id'];
+		$action    = isset($_GET['action']) ? $_GET['action'] : NULL;
+		$id 	   = isset($_GET['id']) ? $_GET['id'] : NULL;
 		$disponibilidade_id = isset($_GET['disponibilidade_id']) ? $_GET['disponibilidade_id'] : NULL;
 	}
 	
@@ -55,6 +58,9 @@
 			$reserva = $dispo->reserva;
 			if($reserva->delete()) {
 				$msg = "Objeto excluído com sucesso!";
+				$mail = new MailHelper();
+				$mail->sendCancelamentoAgendamento($reserva->email, $reserva->entidade,
+					$reserva->disponibilidade->data, $reserva->disponibilidade->hora);
 			} else {
 				$msg_erro = "Não foi possível excluir objeto!";
 			}
@@ -85,6 +91,7 @@
 			$reserva->quantidade = $quantidade;
 			$reserva->transporte_tipo_id = $transp;
 			$reserva->transporte_numero = $nrtransp;
+			$reserva->escolaridade_tipo_id = $escolaridade;
 			
 			if($reserva->save()){
 				$msg = "Objeto salvo com sucesso!";
@@ -102,6 +109,10 @@
 			
 			if($reserva->save()){
 				$msg = "Objeto salvo com sucesso!";
+
+				$mail = new MailHelper();
+				$mail->sendConfirmacaoAgendamento($reserva->email,
+					$reserva->entidade, $dispo->data, $dispo->hora);
 			} else {
 				$msg_erro = "Nao foi possivel salvar objeto!";
 			}
@@ -120,9 +131,15 @@
 		$reserva->reserva_situacao_id = 3; #Aguardando Confirmacao
 		$reserva->transporte_tipo_id = $transp;
 		$reserva->transporte_numero = $nrtransp;
+		$reserva->escolaridade_tipo_id = $escolaridade;
 
 		if($reserva->save()){
-			$msg = "Objeto salvo com sucesso! A reserva encontra-se em análise para aprovação.";
+			$msg = "Objeto salvo com sucesso! A reserva encontra-se em análise para aprovação. $resp";
+
+			$dispo = Disponibilidade::find($disponibilidade_id);
+			$mail = new MailHelper();
+			$resp = $mail->sendAgendamento($email, $entidade ,$dispo->data, $dispo->hora);
+			
 		} else {
 			$msg_erro = "Nao foi possivel salvar objeto!";
 		}

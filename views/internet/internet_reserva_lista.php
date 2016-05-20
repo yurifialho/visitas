@@ -11,6 +11,10 @@
 
   include      "../../includes/header_internet.php"; 
 
+  #processamento de requisicoes
+  $ano = preg_replace('/[^[:digit:]_]/', '',$_GET['ano']);
+  $mes = preg_replace('/[^[:digit:]_]/', '',$_GET['mes']);
+
 ?>
 
 <body>
@@ -28,7 +32,7 @@
           <?php 
             $anopassado = date('Y') - 1;
             for($i = $anopassado; $i <= $anopassado + 2; $i++) { ?>
-              <option value="<?php echo $i ?>" <?php echo  isset($_GET['ano']) && ($i == $_GET['ano'] || $i == date('Y')) ? 'selected' : '' ?> ><?php echo $i ?></option>
+              <option value="<?php echo $i ?>" <?php echo  ($ano != '' && $i == $ano) || $i == date('Y') ? 'selected' : '' ?> ><?php echo $i ?></option>
           <?php } ?>
           </select>
       </div>
@@ -36,7 +40,13 @@
         <select id="mes" name="mes" class="form-control">
           <?php 
             foreach ($map_mes as $mes_n => $mes_v) { ?>
-              <option value="<?php echo $mes_n ?>" <?php echo isset($_GET['mes']) && ($mes_n == $_GET['mes'] || $mes_n == date('m')) ? "selected" : "" ?>><?php echo $mes_v ?></option>
+              <option value="<?php echo $mes_n ?>"
+               <?php 
+                  if($mes != '') echo($mes_n == $mes ? "selected" : "");
+                  else echo($mes_n == date('m') ? "selected" : "");
+               ?>>
+                <?php echo $mes_v ?>
+              </option>
           <?php } ?>
           </select>
       </div>
@@ -56,35 +66,21 @@
     </thead>
     <tbody>
       <?php
-      	$query = "1=1 ";
-       
-      	if(isset($_GET['data'])) {
-      		$patrimonio = $_GET['data'];
-      		$query.=" and data = '$data' " ;
-      	}
-      	if(isset($_GET['hora'])) {
-      		$nome = $_GET['hora'];
-      		$query.=" and hora = '$hora' ";
-      	}
-        if (isset($_GET['ano'])) {
-          $ano = $_GET['ano'];
-          $query.=" and extract(year from data) = $ano ";
-        } else {
+        
+      	$query = 'extract(year from data) = ? and extract(month from data) = ? ';
+               
+        if (!isset($ano)) {
           $ano = date('Y');
-          $query.=" and extract(year from data) = $ano ";
         }
-        if (isset($_GET['mes'])) {
-          $mes = $_GET['mes'];
-          $query.=" and extract(month from data) = $mes ";
-        } else {
+        if (!isset($mes)) {
           $mes = date('m');
-          $query.=" and extract(month from data) = $mes ";
         }
-      	foreach (Disponibilidade::find('all', array('conditions' => $query, 'order' => 'data asc, hora asc')) as $dispo) { ?>
+
+      	foreach (Disponibilidade::all(array('conditions' => array($query, $ano, $mes), 'order' => 'data asc, hora asc')) as $dispo) { ?>
       <tr>
-        <td><?php echo $dispo->data->format('d/m/Y') ?> <?php echo $dispo->hora ?></td>
-        <td><?php echo  $dispo->reserva != NULL && $dispo->reserva->situacao->id != 3 ? $dispo->reserva->entidade : "-" ?></td>
-        <td><?php echo  $dispo->reserva != NULL ? $dispo->reserva->situacao->descricao : "Livre" ?></td>
+        <td><?php echo $dispo->data->format('d/m/Y') ?> <?php echo substr($dispo->hora,0,5) ?></td>
+        <td><?php echo $dispo->reserva != NULL && $dispo->reserva->situacao->id != 3 ? $dispo->reserva->entidade : "-" ?></td>
+        <td><?php echo $dispo->reserva != NULL ? $dispo->reserva->situacao->descricao : "Livre" ?></td>
         <td>
           <?php if($dispo->reserva == NULL) { ?>
           <a href="internet_reserva_form.php?action=agendar&id=<?php echo $dispo->id ?>">

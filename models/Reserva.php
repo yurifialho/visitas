@@ -20,6 +20,8 @@ class Reserva extends ActiveRecord\Model {
 								  'foreign_key' => 'reserva_situacao_id'),
 		array('transporte', 'class_name' => 'TransporteTipo', 
 								  'foreign_key' => 'transporte_tipo_id'),
+		array('escolaridade', 'class_name' => 'EscolaridadeTipo', 
+								  'foreign_key' => 'escolaridade_tipo_id'),
 		array('usuario', 'class_name' => 'Usuario', 
 								  'foreign_key' => 'usuario_id'),
 		array('disponibilidade')
