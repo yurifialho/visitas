@@ -30,9 +30,9 @@ if(!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] == ""){
   $senha   = isset($_POST['senha']) ? $_POST['senha'] : null;
 	
   if($usuario != "" && isset($senha)) {
-  	
-  	
-  		$objUsuario = Usuario::find('first', array('conditions' => "login = '$usuario' and senha = md5('$senha')"));
+  	  
+      $objUsuario = Usuario::find('first', array('conditions' => array("login = ? and senha = md5(?)", $usuario, $senha)));
+      
   		if($objUsuario) {
   			$_SESSION['idusuario'] = $objUsuario->id;
   			$_SESSION['nomeusuario'] = $objUsuario->login;

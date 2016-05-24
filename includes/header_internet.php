@@ -8,6 +8,7 @@
 # @contact: yurirfialho@gmail.com
 #
 #--------------------------------------------------------------------------
+  header('Content-Type: text/html; charset=iso-8859-1');
   require_once "commons.php";
   require_once "database.config.php";
 
