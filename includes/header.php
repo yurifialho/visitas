@@ -41,6 +41,8 @@
 	echo "<script src='".$BASE."js/bootstrap.min.js'></script>";
 	echo "<script src='".$BASE."js/bootstrap-datepicker.js'></script>";
   echo "<script src='".$BASE."js/jquery.maskedinput.min.js'></script>";
+  echo "<script src='".$BASE."js/jquery.complexify.min.js'></script>";
+  echo "<script src='".$BASE."js/jquery.complexify.banlist.js'></script>";
 	echo "<link rel='stylesheet' type='text/css' href='".$BASE."css/bootstrap.min.css'></link>";
 	echo "<link rel='stylesheet' type='text/css' href='".$BASE."css/datepicker.css'></link>";
 	echo "<link rel='stylesheet' type='text/css' href='".$BASE."css/bootstrap-responsive.css'></link>";

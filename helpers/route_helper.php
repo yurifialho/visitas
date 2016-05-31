@@ -61,15 +61,17 @@ class RouteHelper {
 		}
 
 		if($msg != "" || $msg != NULL) {
-			$param2 = $msg;
+			$param2 = "&msg=" . htmlspecialchars($msg, ENT_COMPAT,'ISO-8859-1', true);
 			$hasParam = true;
 		}
 
 		if($msg_erro != "" || $msg_erro != NULL) {
-			$param3 = $msg_erro;
+			$param3 = "&msg_erro=" . htmlspecialchars($msg_erro, ENT_COMPAT,'ISO-8859-1', true);
 			$hasParam = true;
 		}
 		header('Location: '.$this->url.($hasParam ? "?" : "").$param1.$param2.$param3);
 	}
 }
+
+
 ?>

@@ -10,12 +10,34 @@
 #--------------------------------------------------------------------------
 # Recebe as requisicoes da view e trata.
 #-------------------------------------------------------------------------- 
+	require_once "../libs/complexify/Complexify.php";
 	require_once "../includes/database.config.php";
+	require_once "../helpers/route_helper.php";
 
 	session_start();
 	
 	if(isset($_SESSION['idusuario'])) {
 		$usuarioid = $_SESSION['idusuario'];
+	}
+
+	$router = new RouteHelper("../views/usuario/usuario_lista.php");
+
+	function validateForcaSenha($password) {
+		global $router;
+		$check = new \Complexify\Complexify(array(
+    		'minimumChars' => 8,         // the minimum acceptable password length
+    	#	'strengthScaleFactor' => 1,  // scale the required password strength (higher numbers require a more complex password)
+    	    'banMode' => 'loose',        // strict == don't allow substrings of banned passwords, loose == only ban exact matches
+    		'encoding' => 'ISO-8859-1'   // password string encoding
+		));
+
+		$result = $check->evaluateSecurity($password);
+		if($result->valid) {
+			return true;
+		} else {
+			$router->addMsgErro("Senha muito fraca: " . implode(", ", $result->errors));
+			return false;
+		}
 	}
 
 	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -33,41 +55,53 @@
 		$usuario = Usuario::find($id);
 		
 		if($usuario->delete()) {
-			$msg = "Objeto excluido com sucesso!";
+			$router->addMsg("Objeto excluído com sucesso!");
 		} else {
-			$msg_erro = "Nao foi possivel excluir objeto!";
+			$router->addMsgErro("Nao foi possível excluir objeto!");
 		}
+		$router->redirect();
+		return;
 	} elseif($action == "new") {
 		if($login != NULL && $senha != NULL) {
 			$usuario = new Usuario();
 			$usuario->login = $login;
+
+			#verifica a força da senha
+			if(!validateForcaSenha($senha)) {
+				$router->redirect(); return;
+			}
+
 			$usuario->senha = md5($senha);
 			
 			if($usuario->save()){
-				$msg = "Objeto salvo com sucesso!";
+				$router->addMsg("Objeto salvo com sucesso!");
 			} else {
-				$msg_erro = "Nao foi possível salvar objeto!";
+				$router->addMsgErro("Nao foi possível salvar objeto!");
 			}
 		} else {
-			$msg_erro = "Login e Senha são obrigatórias!";
+			$router->addMsgErro("Login e Senha são obrigatórias!"); 
 		}
+		$router->redirect();return;
 	} elseif($action == "update") {
 		$usuario = Usuario::find($id);
 		if($usuario != null) {
 			$usuario->login = $login;
 
-			if($senha != '') {
+			if(validateForcaSenha($senha)) {
 				$usuario->senha = md5($senha);
+			} else {
+				$router->redirect(); return;
 			}
 						
 			if($usuario->save()){
-				$msg = "Objeto salvo com sucesso!";
+				$router->addMsg("Objeto salvo com sucesso!");
 			} else {
-				$msg_erro = "Nao foi possivel salvar objeto!";
+				$router->addMsgErro("Nao foi possível salvar objeto!");
 			}
+		} else {
+			$router->addMsgErro("Usuário não localizado.");
 		}
+
+		$router->redirect(); return;
 	}  	
-	
-	header('Location: '."../views/usuario/usuario_lista.php?msg=$msg&msg_erro=$msg_erro");	
-	
 ?>

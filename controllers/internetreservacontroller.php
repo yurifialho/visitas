@@ -105,7 +105,7 @@
 		$reserva->escolaridade_tipo_id = $escolaridade;
 			
 		if($reserva->save()){
-			$router->addMsg("Objeto salvo com sucesso! A reserva encontra-se em análise para aprovação.");
+			$router->addMsg("Objeto salvo com sucesso! A < > & reserva encontra-se em análise para aprovação.");
 
 			$mail = new MailHelper();
 			$mail->sendAgendamento($email, $entidade, $reserva->disponibilidade->data,
