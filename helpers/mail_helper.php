@@ -16,7 +16,7 @@ class MailHelper {
 	private $config = array();
 
 	function __construct() {
-		$this->config = parse_ini_file("../config.ini");
+		$this->config = parse_ini_file("../config.php");
 	}
 
 	public function sendAgendamento($to, $entidade, $data, $hora) {
