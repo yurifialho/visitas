@@ -67,7 +67,7 @@
     <tbody>
       <?php
         
-      	$query = 'extract(year from data) = ? and extract(month from data) = ? ';
+      	$query = 'data > current_date() and extract(year from data) = ? and extract(month from data) = ? ';
                
         if (!isset($ano) || $ano == "") {
           $ano = date('Y');
@@ -77,9 +77,8 @@
         }
 
       	foreach (Disponibilidade::all(array('conditions' => array($query, $ano, $mes), 'order' => 'data asc, hora asc')) as $dispo) { ?>
-        <?php #if($dispo->data >= new DateTime()) { ?>
       <tr>
-        <td><?php echo $dispo->data->format('(l) d/m/Y') ?> <?php echo substr($dispo->hora,0,5) ?></td>
+        <td><?php echo $dispo->data->format('d/m/Y') ?> <?php echo substr($dispo->hora,0,5) ?><?php echo $dispo->data->format(' (l)')?></td>
         <td><?php echo $dispo->reserva != NULL && $dispo->reserva->situacao->id != 3 ? $dispo->reserva->entidade : "-" ?></td>
         <td><?php echo $dispo->reserva != NULL ? $dispo->reserva->situacao->descricao : "Livre" ?></td>
         <td>
@@ -89,7 +88,6 @@
             <span class="glyphicon glyphicon-calendar"></span> Agendar
           </button>
           </a>
-          <?php  #} ?>
         <?php } ?>
         </td>
       </tr>

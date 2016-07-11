@@ -26,7 +26,7 @@
 	
 	function validateRecaptch() {
 		$siteKey = '6Lc1wx8TAAAAABU2y3ysPDDt7B-AmCRFJh-1cJhS';
-		$secret = '6Lc1wx8TAAAAAPElHWw9hGSbz52VhjR6V0gl3cfm';
+		$secret  = '6Lc1wx8TAAAAAPElHWw9hGSbz52VhjR6V0gl3cfm';
 		$recaptcha = new \ReCaptcha\ReCaptcha($secret);
 		$resp = $recaptcha->verify($_POST['g-recaptcha-response'], $_SERVER['REMOTE_ADDR']);
 

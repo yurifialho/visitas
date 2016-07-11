@@ -88,9 +88,9 @@
 
 			for($i =1; $i < $fim; $i++) {
 				$nova_data = "$ano-$mes-$i";
-				if(strtotime($nova_data) <= getdate()[0]){
+				/*if(strtotime($nova_data) <= getdate()[0]){
 					continue;
-				}
+				}*/
 
 				$data_disponivel = date("Y-m-d", strtotime($nova_data));
 				if(date('N',strtotime($nova_data)) < 7) {
