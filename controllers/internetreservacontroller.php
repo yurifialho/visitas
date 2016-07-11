@@ -79,14 +79,14 @@
 		}
 
 		#quantidade de visitante tem que ser maior que 10.
-		if(isset($quantidade) && $quantidade >= 10) {
+		if(isset($quantidade) && $quantidade <= 10) {
 			$router->addMsgErro("Quantidade de pessoas tem que ser maior que 10!");
 			$router->redirect(); return;
 		}
 		
 		$dispo = Disponibilidade::find($disponibilidade_id);
 
-		if($dispo != null && $dispo->reserva == null) {
+		if($dispo != null && $dispo->reserva != null) {
 			$router->addMsgErro("Essa data já encontra-se reservada por outra pessoa, por favor tente agendar em outra data!");
 			$router->redirect(); return;
 		}
@@ -105,7 +105,7 @@
 		$reserva->escolaridade_tipo_id = $escolaridade;
 			
 		if($reserva->save()){
-			$router->addMsg("Objeto salvo com sucesso! A < > & reserva encontra-se em análise para aprovação.");
+			$router->addMsg("Objeto salvo com sucesso! A reserva encontra-se em análise para aprovação.");
 
 			$mail = new MailHelper();
 			$mail->sendAgendamento($email, $entidade, $reserva->disponibilidade->data,

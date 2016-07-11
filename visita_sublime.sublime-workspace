@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"com",
+				"complexity"
+			],
+			[
+				"pro",
+				"progressbar"
+			],
+			[
+				"vali",
+				"validateForcaSenha"
+			],
+			[
 				"con",
 				"conditions"
 			],
@@ -159,30 +171,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "helpers/route_helper.php",
-			"settings":
-			{
-				"buffer_size": 1796,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "controllers/internetreservacontroller.php",
-			"settings":
-			{
-				"buffer_size": 4407,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "libs/recaptcha/ReCaptcha/ReCaptcha.php",
-			"settings":
-			{
-				"buffer_size": 3267,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -213,12 +201,13 @@
 	"expanded_folders":
 	[
 		"/var/www/visitas",
+		"/var/www/visitas/analyse",
+		"/var/www/visitas/analyse/db",
 		"/var/www/visitas/controllers",
 		"/var/www/visitas/helpers",
 		"/var/www/visitas/includes",
 		"/var/www/visitas/libs",
-		"/var/www/visitas/libs/recaptcha",
-		"/var/www/visitas/libs/recaptcha/ReCaptcha",
+		"/var/www/visitas/models",
 		"/var/www/visitas/views",
 		"/var/www/visitas/views/disponibilidade",
 		"/var/www/visitas/views/internet",
@@ -227,25 +216,35 @@
 	],
 	"file_history":
 	[
-		"/var/www/visitas/views/internet/internet_reserva_lista.php",
 		"/var/www/visitas/controllers/internetreservacontroller.php",
+		"/mnt/sistemas/intranetext/listar_fique_atento.php",
+		"/mnt/intranet/principal.asp",
+		"/var/www/visitas/includes/header.php",
+		"/var/www/visitas/helpers/mail_helper.php",
+		"/run/user/1001/gvfs/sftp:host=10.100.8.97,user=root/var/www/news_10rm/inserir_usuarios_db.php",
+		"/var/www/visitas/config.php",
+		"/var/www/visitas/views/usuario/usuario_form.php",
+		"/var/www/visitas/libs/complexify/Complexify.php",
+		"/var/www/visitas/includes/messages.php",
+		"/var/www/visitas/controllers/usuariocontroller.php",
+		"/var/www/visitas/helpers/route_helper.php",
+		"/run/user/1001/gvfs/smb-share:server=10.100.8.9,share=intranet/asp/escsec/assjur/menu.asp",
+		"/run/user/1001/gvfs/smb-share:server=10.100.8.9,share=sistemas/intranetext/esclog/processar_secao.php",
+		"/var/www/visitas/libs/complexify/README.md",
+		"/var/www/visitas/libs/complexify/src/Complexify/Complexify.php",
+		"/var/www/visitas/views/internet/internet_reserva_lista.php",
 		"/var/www/visitas/models/Reserva.php",
 		"/var/www/visitas/libs/recaptcha/ReCaptcha/RequestMethod/Post.php",
 		"/var/www/visitas/libs/recaptcha/ReCaptcha/RequestMethod.php",
 		"/var/www/visitas/libs/recaptcha/ReCaptcha/RequestParameters.php",
 		"/var/www/visitas/helpers/application_helper.php",
 		"/var/www/visitas/includes/mails/mail_confirma_template.php",
-		"/var/www/visitas/helpers/mail_helper.php",
 		"/var/www/visitas/libs/phpmailer/examples/test_db_smtp_basic.php",
 		"/var/www/visitas/views/disponibilidade/disponibilidade_lista.php",
 		"/var/www/visitas/views/reserva/reserva_form.php",
 		"/var/www/visitas/models/EscolaridadeTipo.php",
-		"/var/www/visitas/helpers/route_helper.php",
-		"/var/www/visitas/controllers/usuariocontroller.php",
-		"/var/www/visitas/views/usuario/usuario_form.php",
 		"/var/www/visitas/views/usuario/usuario_lista.php",
 		"/var/www/visitas/includes/header_internet.php",
-		"/var/www/visitas/includes/header.php",
 		"/var/www/visitas/controllers/reservacontroller.php",
 		"/var/www/visitas/login.php",
 		"/var/www/visitas/libs/phpmailer/class.phpmailer.php",
@@ -344,17 +343,7 @@
 		"/C/Users/admin/AppData/Local/Temp/scp43721/var/www/news_10rm/inserir_foto.php",
 		"/C/Users/admin/AppData/Local/Temp/scp44639/var/www/news_10rm/upload_imagens.php",
 		"/C/Users/admin/AppData/Local/Temp/scp33008/var/www/news_10rm/inserir_arquivos.php",
-		"/C/Users/admin/AppData/Local/Temp/scp33702/var/www/news_10rm/inserir_arquivos_db.php",
-		"/C/Users/admin/AppData/Local/Temp/scp30480/var/www/news_10rm/noticia.php",
-		"/C/Users/admin/AppData/Local/Temp/scp44547/var/www/news_10rm/controle_noticias.php",
-		"/C/Users/admin/AppData/Local/Temp/scp45835/var/www/news_10rm/inserir_noticias.php",
-		"/C/Users/admin/AppData/Local/Temp/scp45313/var/www/news_10rm/inserir_noticias_db.php",
-		"/C/Users/admin/AppData/Local/Temp/scp43486/var/www/news_10rm/alterar_noticias_db.php",
-		"/C/Users/admin/AppData/Local/Temp/scp44238/var/www/news_10rm/alterar_noticias.php",
-		"/C/Users/admin/AppData/Local/Temp/scp32430/var/www/news_10rm/inserir_foto_db.php",
-		"/C/Users/admin/AppData/Local/Temp/scp45747/var/www/news_10rm/lista_noticias.php",
-		"/C/Users/admin/AppData/Local/Temp/scp45895/var/www/news_10rm/excluir_noticias.php",
-		"/C/Users/admin/AppData/Local/Temp/scp46745/var/www/news_10rm/excluir_noticia_confirma.php"
+		"/C/Users/admin/AppData/Local/Temp/scp33702/var/www/news_10rm/inserir_arquivos_db.php"
 	],
 	"find":
 	{
@@ -376,6 +365,8 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"excel",
+			"$MIN_COMPLEXITY",
 			"$mes",
 			"msg",
 			"msg_erro",
@@ -421,97 +412,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "helpers/route_helper.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1796,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1032,
-								1032
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": -0.0,
-						"translation.y": 561.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "controllers/internetreservacontroller.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4407,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1240,
-								1240
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": -0.0,
-						"translation.y": 1224.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "libs/recaptcha/ReCaptcha/ReCaptcha.php",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 3267,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": -0.0,
-						"translation.y": 1122.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				}
 			]
 		}
 	],
