@@ -88,15 +88,28 @@
 
 			for($i =1; $i < $fim; $i++) {
 				$nova_data = "$ano-$mes-$i";
+				if(strtotime($nova_data) <= getdate()[0]){
+					continue;
+				}
+
 				$data_disponivel = date("Y-m-d", strtotime($nova_data));
-				for($hora = 8; $hora <= 17; $hora++) {
-					for($min = 0; $min <= 30; $min+=30) {
+				if(date('N',strtotime($nova_data)) < 7) {
+				for($hora = 8; $hora <= 11; $hora++) { #horario manha
 						$dispo = new Disponibilidade();
 						$dispo->data = $nova_data;
-						$dispo->hora = "$hora:$min";
+						$dispo->hora = "$hora:00";
 
 						$dispo->save();
-					}
+				}
+				}
+				if(date('N',strtotime($nova_data)) < 6) {
+				for($hora = 13; $hora <= 15; $hora++) { #horario tarde
+						$dispo = new Disponibilidade();
+						$dispo->data = $nova_data;
+						$dispo->hora = "$hora:30";
+
+						$dispo->save();
+				}
 				}
 			}
 		}

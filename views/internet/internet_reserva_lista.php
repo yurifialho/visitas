@@ -30,8 +30,8 @@
       <div class="form-group">
         <select id="ano" name="ano" class="form-control">
           <?php 
-            $anopassado = date('Y') - 1;
-            for($i = $anopassado; $i <= $anopassado + 2; $i++) { ?>
+            $anopassado = date('Y');
+            for($i = $anopassado; $i <= $anopassado + 1; $i++) { ?>
               <option value="<?php echo $i ?>" <?php echo  ($ano != '' && $i == $ano) || $i == date('Y') ? 'selected' : '' ?> ><?php echo $i ?></option>
           <?php } ?>
           </select>
@@ -69,16 +69,17 @@
         
       	$query = 'extract(year from data) = ? and extract(month from data) = ? ';
                
-        if (!isset($ano)) {
+        if (!isset($ano) || $ano == "") {
           $ano = date('Y');
         }
-        if (!isset($mes)) {
+        if (!isset($mes) || $mes == "") {
           $mes = date('m');
         }
 
       	foreach (Disponibilidade::all(array('conditions' => array($query, $ano, $mes), 'order' => 'data asc, hora asc')) as $dispo) { ?>
+        <?php #if($dispo->data >= new DateTime()) { ?>
       <tr>
-        <td><?php echo $dispo->data->format('d/m/Y') ?> <?php echo substr($dispo->hora,0,5) ?></td>
+        <td><?php echo $dispo->data->format('(l) d/m/Y') ?> <?php echo substr($dispo->hora,0,5) ?></td>
         <td><?php echo $dispo->reserva != NULL && $dispo->reserva->situacao->id != 3 ? $dispo->reserva->entidade : "-" ?></td>
         <td><?php echo $dispo->reserva != NULL ? $dispo->reserva->situacao->descricao : "Livre" ?></td>
         <td>
@@ -88,7 +89,8 @@
             <span class="glyphicon glyphicon-calendar"></span> Agendar
           </button>
           </a>
-          <?php } ?>
+          <?php  #} ?>
+        <?php } ?>
         </td>
       </tr>
       <?php } ?>

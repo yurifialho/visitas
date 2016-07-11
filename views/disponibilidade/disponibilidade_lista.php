@@ -118,8 +118,6 @@
           array_push($conditions, $value);
         }
 
-        print_r($conditions);
-
       	foreach (Disponibilidade::all(array('conditions' => $conditions, 'order' => 'data asc, hora asc')) as $dispo) { ?>
       <tr>
         <td><?php echo $dispo->id ?></td>
