@@ -12,6 +12,8 @@
 	#DB username
 	$username = "tenfialho";
 	$password = "tenfialho";
+	/*$username = "visita";
+	$password = ";;visita;;";*/
 	$host	  = "127.0.0.1";
 	$database = "visita";
 

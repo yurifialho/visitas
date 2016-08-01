@@ -46,6 +46,15 @@
           <?php } ?>
           </select>
       </div>
+      <div class="form-group">
+        <select id="sit_reserva" name="sit_reserva" class="form-control">
+          <option value="">Situação Reserva</option>
+          <?php 
+            foreach (ReservaSituacao::all() as $sit_reserva) { ?>
+              <option value="<?php echo $sit_reserva->id ?>"><?php echo $sit_reserva->descricao ?></option>
+          <?php } ?>
+          </select>
+      </div>
       <button type="submit" class="btn btn-info" onclick="jQuery('#action').val('index')">
       	<span class="glyphicon glyphicon-search">&nbsp;</span>Buscar</button>
     </form>
@@ -63,7 +72,7 @@
     </thead>
     <tbody>
       <?php
-      	$query = 'extract(year from data) = ? and extract(month from data) = ? ';
+      	$query = 'extract(year from data) = ? and extract(month from data) = ?';
        
         if (!isset($ano)) {
           $ano = date('Y');
@@ -71,8 +80,12 @@
         if (!isset($mes)) {
           $mes = date('m');
         }
+        if(!isset($sit_reserva)){
+          $sit_reserva = 1;
+        }
 
       	foreach (Disponibilidade::all(array('conditions' => array($query, $ano, $mes), 'order' => 'data asc, hora asc')) as $dispo) { ?>
+        <?php if($dispo->reserva->situacao->id == $sit_reserva) { ?>
       <tr>
         <td><?php echo $dispo->id ?></td>
         <td><?php echo $dispo->data->format('d/m/Y') ?> <?php echo $dispo->hora ?></td>
@@ -109,7 +122,7 @@
           <?php } ?>
         </td>
       </tr>
-      <?php } ?>
+      <?php }} ?>
     </tbody>
     </table>
   </div>

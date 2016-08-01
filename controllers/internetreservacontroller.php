@@ -73,10 +73,10 @@
 		$router->redirect();
 		return;
 	} elseif($action == "agendar") {
-		if(!validateRecaptch()) {
+		/*if(!validateRecaptch()) {
 			$router->addMsgErro("Código não confere com a imagem!");
 			$router->redirect(); return;
-		}
+		}*/
 
 		#quantidade de visitante tem que ser maior que 10.
 		if(isset($quantidade) && $quantidade <= 10) {

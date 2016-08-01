@@ -38,6 +38,7 @@
 		$transp		= isset($_POST['transportetipo']) ? $_POST['transportetipo'] : NULL;
 		$nrtransp	= isset($_POST['nrtransp']) ? $_POST['nrtransp'] : NULL;
 		$escolaridade = isset($_POST['escolaridadetipo']) ? $_POST['escolaridadetipo'] : NULL;
+		$sit_reserva = isset($_POST['sit_reserva']) ? $_POST['sit_reserva'] : NULL;
 	} else {
 		$action    = isset($_GET['action']) ? $_GET['action'] : NULL;
 		$id 	   = isset($_GET['id']) ? $_GET['id'] : NULL;
@@ -51,6 +52,9 @@
 		}
 		if($mes != NULL){
 			$query .= "&mes=$mes";
+		}
+		if($sit_reserva != NULL){
+			$query .= "&sit_reserva=$sit_reserva";
 		}
 	} elseif($action == "delete") {
 		$dispo = Disponibilidade::find($disponibilidade_id);

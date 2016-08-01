@@ -129,7 +129,7 @@
             <span class="glyphicon glyphicon-pencil"></span> Editar
           </button>
           </a>
-          <a href="../../controllers/disponibilidadecontroller.php?action=delete&id=<?php echo $dispo->id ?>"
+          <a href="/controllers/disponibilidadecontroller.php?action=delete&id=<?php echo $dispo->id ?>"
             onclick="return confirm('Deseja realmente remover?');">
           <button type="button" class="btn btn-danger btn-xs">
             <span class="glyphicon glyphicon-trash"></span> Excluir
