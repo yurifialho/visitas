@@ -175,94 +175,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "views/internet/internet_reserva_form.php",
-			"settings":
-			{
-				"buffer_size": 6732,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "controllers/internetreservacontroller.php",
-			"settings":
-			{
-				"buffer_size": 4406,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "includes/database.config.php",
-			"settings":
-			{
-				"buffer_size": 1152,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "includes/commons.php",
-			"settings":
-			{
-				"buffer_size": 658,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "views/reserva/reserva_lista.php",
-			"settings":
-			{
-				"buffer_size": 5019,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "includes/header.php",
-			"settings":
-			{
-				"buffer_size": 4153,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "views/disponibilidade/disponibilidade_lista.php",
-			"settings":
-			{
-				"buffer_size": 5409,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/mnt/intranet/asp/menu.asp",
-			"settings":
-			{
-				"buffer_size": 5180,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "controllers/disponibilidadecontroller.php",
-			"settings":
-			{
-				"buffer_size": 3353,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "views/disponibilidade/disponibilidade_form.php",
-			"settings":
-			{
-				"buffer_size": 2382,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "controllers/reservacontroller.php",
-			"settings":
-			{
-				"buffer_size": 5267,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -293,9 +205,6 @@
 	"expanded_folders":
 	[
 		"/var/www/visitas",
-		"/var/www/visitas/controllers",
-		"/var/www/visitas/includes",
-		"/var/www/visitas/views",
 		"/var/www/visitas/views/disponibilidade",
 		"/var/www/visitas/views/internet",
 		"/var/www/visitas/views/reserva",
@@ -303,23 +212,29 @@
 	],
 	"file_history":
 	[
+		"/var/www/visitas/controllers/reservacontroller.php",
+		"/var/www/visitas/controllers/disponibilidadecontroller.php",
+		"/var/www/visitas/views/disponibilidade/disponibilidade_form.php",
+		"/mnt/intranet/asp/menu.asp",
+		"/var/www/visitas/views/disponibilidade/disponibilidade_lista.php",
+		"/var/www/visitas/includes/header.php",
+		"/var/www/visitas/views/reserva/reserva_lista.php",
+		"/var/www/visitas/includes/commons.php",
+		"/var/www/visitas/includes/database.config.php",
+		"/var/www/visitas/controllers/internetreservacontroller.php",
+		"/var/www/visitas/views/internet/internet_reserva_form.php",
+		"/tmp/mozilla_tenfialho0/Termo_de_Referencia_(018).docx",
 		"/home/tenfialho/Desenvolvimento/PROJETOS/VISITACAO/visitas/views/internet/internet_reserva_form.php",
 		"/home/tenfialho/Desenvolvimento/PROJETOS/VISITACAO/visitas/controllers/internetreservacontroller.php",
 		"/home/tenfialho/Desenvolvimento/PROJETOS/VISITACAO/visitas/includes/database.config.php",
 		"/home/tenfialho/Desenvolvimento/PROJETOS/VISITACAO/visitas/includes/header_internet.php",
 		"/home/tenfialho/Desenvolvimento/PROJETOS/VISITACAO/visitas/includes/commons.php",
-		"/var/www/visitas/includes/commons.php",
 		"/var/www/visitas/includes/header_internet.php",
-		"/var/www/visitas/controllers/internetreservacontroller.php",
-		"/var/www/visitas/includes/database.config.php",
 		"/home/tenfialho/Desenvolvimento/PROJETOS/VISITACAO/visitas/config.php",
 		"/mnt/sistemas/intranetext/AAHistCult/processar_palestras.php",
 		"/mnt/intranet/index.asp",
 		"/home/tenfialho/Desenvolvimento/PROJETOS/WWW10RM/configuration.php",
-		"/var/www/visitas/views/disponibilidade/disponibilidade_lista.php",
-		"/var/www/visitas/controllers/disponibilidadecontroller.php",
 		"/var/www/visitas/views/internet/internet_reserva_lista.php",
-		"/var/www/visitas/includes/header.php",
 		"/mnt/sistemas/intranetext/listar_fique_atento.php",
 		"/mnt/intranet/principal.asp",
 		"/var/www/visitas/helpers/mail_helper.php",
@@ -344,15 +259,12 @@
 		"/var/www/visitas/views/reserva/reserva_form.php",
 		"/var/www/visitas/models/EscolaridadeTipo.php",
 		"/var/www/visitas/views/usuario/usuario_lista.php",
-		"/var/www/visitas/controllers/reservacontroller.php",
 		"/var/www/visitas/login.php",
 		"/var/www/visitas/libs/phpmailer/class.phpmailer.php",
 		"/var/www/visitas/includes/mails/mail_cancela_template.php",
 		"/var/www/visitas/includes/mails/mail_agenda_template.php",
 		"/var/www/visitas/config.ini",
 		"/var/www/visitas/console.php",
-		"/var/www/visitas/views/reserva/reserva_lista.php",
-		"/var/www/visitas/views/internet/internet_reserva_form.php",
 		"/run/user/1001/gvfs/sftp:host=10.100.52.20,port=52022,user=web10rm/home/web10rm/visitas/includes/database.config.php",
 		"/run/user/1001/gvfs/smb-share:server=10.100.8.9,share=intranet/asp/boletins/adit_sapnr.asp",
 		"/run/user/1001/gvfs/smb-share:server=10.100.8.9,share=intranet/asp/index_boletins.asp",
@@ -427,10 +339,7 @@
 		"/G/DETRAN/yurir/.pgpass",
 		"/G/DETRAN/yurir/.pgadmin3",
 		"/G/DETRAN/yurir/rsync_app/bin/backup_sinc.sh",
-		"/G/DETRAN/yurir/rsync_app/bin/sinc.sh",
-		"/G/DETRAN/yurir/rsync_app/bin/sinc_externo.sh",
-		"/G/DETRAN/yurir/ProjetosAntigos/meus_projetos/replicador/src/main/java/br/gov/ce/detran/principal/Replicador.java",
-		"/C/Users/admin/AppData/Local/Temp/scp52290/var/www/news_10rm/inserir_arquivos_db.php"
+		"/G/DETRAN/yurir/rsync_app/bin/sinc.sh"
 	],
 	"find":
 	{
@@ -502,332 +411,8 @@
 	"groups":
 	[
 		{
-			"selected": 7,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "views/internet/internet_reserva_form.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6732,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1989.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "controllers/internetreservacontroller.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4406,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2968,
-								2968
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 765.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "includes/database.config.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1152,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								520,
-								520
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "includes/commons.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 658,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								362,
-								362
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "views/reserva/reserva_lista.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5019,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2891,
-								2891
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 816.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "includes/header.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4153,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": -0.0,
-						"translation.y": 1224.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "views/disponibilidade/disponibilidade_lista.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5409,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3772,
-								3772
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1545.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "/mnt/intranet/asp/menu.asp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5180,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/ASP/HTML-ASP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "controllers/disponibilidadecontroller.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3353,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1276,
-								1276
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 459.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "views/disponibilidade/disponibilidade_form.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2382,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								902,
-								902
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "controllers/reservacontroller.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5267,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2271,
-								2271
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 306.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				}
 			]
 		}
 	],

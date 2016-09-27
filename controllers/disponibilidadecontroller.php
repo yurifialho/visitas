@@ -88,10 +88,7 @@
 
 			for($i =1; $i < $fim; $i++) {
 				$nova_data = "$ano-$mes-$i";
-				/*if(strtotime($nova_data) <= getdate()[0]){
-					continue;
-				}*/
-
+				
 				$data_disponivel = date("Y-m-d", strtotime($nova_data));
 				if(date('N',strtotime($nova_data)) < 7) {
 				for($hora = 8; $hora <= 11; $hora++) { #horario manha
@@ -106,7 +103,7 @@
 				for($hora = 13; $hora <= 15; $hora++) { #horario tarde
 						$dispo = new Disponibilidade();
 						$dispo->data = $nova_data;
-						$dispo->hora = "$hora:30";
+						$dispo->hora = "$hora:00";
 
 						$dispo->save();
 				}
