@@ -15,7 +15,7 @@
   $ano = preg_replace('/[^[:digit:]_]/', '',$_GET['ano']);
   $mes = preg_replace('/[^[:digit:]_]/', '',$_GET['mes']);
 
-  setlocale(LC_ALL, 'pt_BR', 'pt_BR.ISO-8859-1', 'portuguese');
+  setlocale(LC_ALL, 'pt_BR', 'pt_BR.utf-8', 'portuguese');
 
 
 ?>
@@ -81,7 +81,7 @@
 
       	foreach (Disponibilidade::all(array('conditions' => array($query, $ano, $mes), 'order' => 'data asc, hora asc')) as $dispo) { ?>
       <tr>
-        <td><?php echo $dispo->data->format('d/m/Y') ?> <?php echo substr($dispo->hora,0,5) ?> <?php echo strftime('%A', $dispo->data->getTimestamp()); ?></td>
+        <td><?php echo $dispo->data->format('d/m/Y') ?> <?php echo substr($dispo->hora,0,5) ?> <?php echo strftime(' (%A)', $dispo->data->getTimestamp()); ?></td>
         <td><?php echo $dispo->reserva != NULL && $dispo->reserva->situacao->id != 3 ? $dispo->reserva->entidade : "-" ?></td>
         <td><?php echo $dispo->reserva != NULL ? $dispo->reserva->situacao->descricao : "Livre" ?></td>
         <td>
