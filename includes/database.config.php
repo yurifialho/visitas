@@ -9,18 +9,18 @@
 #
 #--------------------------------------------------------------------------
 	
-	#DB username
-	$username = "tenfialho";
-	$password = "tenfialho";
-	/*$username = "visita";
-	$password = ";;visita;;";*/
-	$host	  = "127.0.0.1";
-	$database = "visita";
-
 	require_once dirname(__FILE__) . '/../libs/phpactiverecord/ActiveRecord.php';
 
 	#Load All Models
 	$modelsFolders = dirname(__FILE__) . "/../models";
+
+	#Load Config File
+	$config = parse_ini_file(dirname(__FILE__) ."/../config.php");
+
+	$username = $config['DB_USER'];
+	$password = $config['DB_PASS'];
+	$host 	  = $config['DB_HOST'];
+	$database = $config['DATABSE'];
 	
 	foreach (scandir($modelsFolders) as $modelsClass) {
 		$metaDados = pathinfo($modelsClass);
