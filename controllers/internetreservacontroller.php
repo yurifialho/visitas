@@ -3,7 +3,7 @@
 # internetreservacontroller.php
 #--------------------------------------------------------------------------
 #
-#	@author: Yuri Fialho - 2º TEN FIALHO
+#	@author: Yuri Fialho - 2Âº TEN FIALHO
 #	@since: 03/02/2016
 #	@contact: yurirfialho@gmail.com
 #
@@ -63,18 +63,18 @@
 		if($ano != NULL && isNumeric($ano)){
 			$router->addParam("ano", $ano);
 		} else {
-			$router->addMsgErro("Ano informado inválido.");
+			$router->addMsgErro("Ano informado invÃ¡lido.");
 		}
 		if($mes != NULL && isNumeric($mes)){
 			$router->addParam("mes", $mes);
 		} else {
-			$router->addMsgErro("Mês informado inválido.");
+			$router->addMsgErro("MÃªs informado invÃ¡lido.");
 		}
 		$router->redirect();
 		return;
 	} elseif($action == "agendar") {
 		/*if(!validateRecaptch()) {
-			$router->addMsgErro("Código não confere com a imagem!");
+			$router->addMsgErro("CÃ³digo nÃ£o confere com a imagem!");
 			$router->redirect(); return;
 		}*/
 
@@ -87,7 +87,7 @@
 		$dispo = Disponibilidade::find($disponibilidade_id);
 
 		if($dispo != null && $dispo->reserva != null) {
-			$router->addMsgErro("Essa data já encontra-se reservada por outra pessoa, por favor tente agendar em outra data!");
+			$router->addMsgErro("Essa data jÃ¡ encontra-se reservada por outra pessoa, por favor tente agendar em outra data!");
 			$router->redirect(); return;
 		}
 				
@@ -105,7 +105,7 @@
 		$reserva->escolaridade_tipo_id = $escolaridade;
 			
 		if($reserva->save()){
-			$router->addMsg("Objeto salvo com sucesso! A reserva encontra-se em análise para aprovação.");
+			$router->addMsg("Objeto salvo com sucesso! A reserva encontra-se em anÃ¡lise para aprovaÃ§Ã£o.");
 
 			$mail = new MailHelper();
 			$mail->sendAgendamento($email, $entidade, $reserva->disponibilidade->data,
@@ -117,7 +117,7 @@
 					
 		$router->redirect(); return;
 	} else {
-		$router->addMsgErro("Operação não suportada!");
+		$router->addMsgErro("OperaÃ§Ã£o nÃ£o suportada!");
 		$router->redirect(); return;
 	}  		
 ?>

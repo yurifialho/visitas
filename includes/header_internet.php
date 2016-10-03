@@ -3,7 +3,7 @@
 # header.php
 #--------------------------------------------------------------------------
 #
-# @author: Yuri Fialho - 2º TEN FIALHO
+# @author: Yuri Fialho - 2Âº TEN FIALHO
 # @since: 03/02/2016
 # @contact: yurirfialho@gmail.com
 #
@@ -25,12 +25,14 @@
 	if(session_id() == '' || !isset($_SESSION)) {		
 		session_start();
 	}
- 
+ 	
+ 	setlocale(LC_ALL, 'pt_BR', 'pt_BR.utf-8', 'portuguese');
+ 	header('Content-Type: text/html; charset=utf-8');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-	  <meta charset="ISO-8859-1">
+	  <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">

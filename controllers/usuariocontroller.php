@@ -3,7 +3,7 @@
 # disponibilidadecontroller.php
 #--------------------------------------------------------------------------
 #
-#	@author: Yuri Fialho - 2º TEN FIALHO
+#	@author: Yuri Fialho - 2Âº TEN FIALHO
 #	@since: 03/02/2016
 #	@contact: yurirfialho@gmail.com
 #
@@ -55,9 +55,9 @@
 		$usuario = Usuario::find($id);
 		
 		if($usuario->delete()) {
-			$router->addMsg("Objeto excluído com sucesso!");
+			$router->addMsg("Objeto excluÃ­do com sucesso!");
 		} else {
-			$router->addMsgErro("Nao foi possível excluir objeto!");
+			$router->addMsgErro("Nao foi possÃ­vel excluir objeto!");
 		}
 		$router->redirect();
 		return;
@@ -66,7 +66,7 @@
 			$usuario = new Usuario();
 			$usuario->login = $login;
 
-			#verifica a força da senha
+			#verifica a forÃ§a da senha
 			if(!validateForcaSenha($senha)) {
 				$router->redirect(); return;
 			}
@@ -76,10 +76,10 @@
 			if($usuario->save()){
 				$router->addMsg("Objeto salvo com sucesso!");
 			} else {
-				$router->addMsgErro("Nao foi possível salvar objeto!");
+				$router->addMsgErro("Nao foi possÃ­vel salvar objeto!");
 			}
 		} else {
-			$router->addMsgErro("Login e Senha são obrigatórias!"); 
+			$router->addMsgErro("Login e Senha sÃ£o obrigatÃ³rias!"); 
 		}
 		$router->redirect();return;
 	} elseif($action == "update") {
@@ -96,10 +96,10 @@
 			if($usuario->save()){
 				$router->addMsg("Objeto salvo com sucesso!");
 			} else {
-				$router->addMsgErro("Nao foi possível salvar objeto!");
+				$router->addMsgErro("Nao foi possÃ­vel salvar objeto!");
 			}
 		} else {
-			$router->addMsgErro("Usuário não localizado.");
+			$router->addMsgErro("UsuÃ¡rio nÃ£o localizado.");
 		}
 
 		$router->redirect(); return;

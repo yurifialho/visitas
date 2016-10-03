@@ -3,7 +3,7 @@
 # commons.php
 #--------------------------------------------------------------------------
 #
-# @author: Yuri Fialho - 2º TEN FIALHO
+# @author: Yuri Fialho - 2Âº TEN FIALHO
 # @since: 03/02/2016
 # @contact: yurirfialho@gmail.com
 #
@@ -16,7 +16,7 @@ $BASE = "/visitas/";
 $map_mes = array(
 	'1' => 'Janeiro',
 	'2' => 'Fevereiro',
-	'3' => 'Março',
+	'3' => 'MarÃ§o',
 	'4' => 'Abril',
 	'5' => 'Maio',
 	'6' => 'Junho',

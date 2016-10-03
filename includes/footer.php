@@ -1,7 +1,7 @@
 </div><!-- /.container -->
 <nav class="navbar navbar-default navbar-fixed-bottom">
   <div class="container" style="padding-bottom: 1%;">
-  	Copyright © 2016 - 10ª Região Militar - Seção de Tecnologia e Informática
+  	Copyright Â© 2016 - 10Âª RegiÃ£o Militar - SeÃ§Ã£o de Tecnologia e InformÃ¡tica
   </div>
 </nav>
 </body>

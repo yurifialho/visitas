@@ -3,7 +3,7 @@
 # header.php
 #--------------------------------------------------------------------------
 #
-# @author: Yuri Fialho - 2º TEN FIALHO
+# @author: Yuri Fialho - 2Âº TEN FIALHO
 # @since: 03/02/2016
 # @contact: yurirfialho@gmail.com
 #
@@ -29,6 +29,9 @@
 	if(!isset($_SESSION['idusuario'])) {
 		header("Location: ".$BASE."logout.php");	
 	}
+
+  setlocale(LC_ALL, 'pt_BR', 'pt_BR.utf-8', 'portuguese');
+  header('Content-Type: text/html; charset=utf-8');
 
 ?>
 <!DOCTYPE html>
@@ -73,7 +76,7 @@
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
       	<li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cadastro Básico <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cadastro BÃ¡sico <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="<?php echo $BASE ?>views/disponibilidade/disponibilidade_lista.php">Disponibilidade</a></li>
             <li><a href="<?php echo $BASE ?>views/usuario/usuario_lista.php">Usuario</a></li>

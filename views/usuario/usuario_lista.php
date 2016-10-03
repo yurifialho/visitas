@@ -3,7 +3,7 @@
 # usuario_lista.php
 #--------------------------------------------------------------------------
 #
-# @author: Yuri Fialho - 2º TEN FIALHO
+# @author: Yuri Fialho - 2Âº TEN FIALHO
 # @since: 03/02/2016
 # @contact: yurirfialho@gmail.com
 #
@@ -16,7 +16,7 @@
 <body>
 <?php include      "../../includes/messages.php"; ?>
 <div class="panel panel-default">
-  <div class="panel-heading">Usuário</div>
+  <div class="panel-heading">UsuÃ¡rio</div>
   <div class="panel-body">
    <div class="panel panel-default">
     
@@ -31,9 +31,9 @@
     <table class="table"  cellSpacing=1 cellPadding=4 width="100%" border=0>
       <thead>
       <tr> 
-        <th>Cód.</th>
+        <th>CÃ³d.</th>
         <th>Login</th>
-        <th>Ação</th>
+        <th>AÃ§Ã£o</th>
       </tr>
     </thead>
     <tbody>

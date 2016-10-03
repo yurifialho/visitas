@@ -3,7 +3,7 @@
 # disponibilidade_form.php
 #--------------------------------------------------------------------------
 #
-# @author: Yuri Fialho - 2บ TEN FIALHO
+# @author: Yuri Fialho - 2ยบ TEN FIALHO
 # @since: 03/02/2016
 # @contact: yurirfialho@gmail.com
 #

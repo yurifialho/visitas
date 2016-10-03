@@ -3,7 +3,7 @@
 # internet_reserva_lista.php
 #--------------------------------------------------------------------------
 #
-# @author: Yuri Fialho - 2º TEN FIALHO
+# @author: Yuri Fialho - 2Âº TEN FIALHO
 # @since: 03/02/2016
 # @contact: yurirfialho@gmail.com
 #
@@ -15,15 +15,12 @@
   $ano = preg_replace('/[^[:digit:]_]/', '',$_GET['ano']);
   $mes = preg_replace('/[^[:digit:]_]/', '',$_GET['mes']);
 
-  setlocale(LC_ALL, 'pt_BR', 'pt_BR.utf-8', 'portuguese');
-
-
 ?>
 
 <body>
 <?php include      "../../includes/messages.php"; ?>
 <div class="panel panel-default">
-  <div class="panel-heading">Agendar Visitação</div>
+  <div class="panel-heading">Agendar VisitaÃ§Ã£o</div>
   <div class="panel-body">
    <div class="panel panel-default">
     
@@ -64,7 +61,7 @@
         <th>Data</th>
         <th>Entidade</th>
         <th>Sit.</th>
-        <th>Ação</th>
+        <th>AÃ§Ã£o</th>
       </tr>
     </thead>
     <tbody>

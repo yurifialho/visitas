@@ -3,7 +3,7 @@
 # disponibilidadecontroller.php
 #--------------------------------------------------------------------------
 #
-#	@author: Yuri Fialho - 2º TEN FIALHO
+#	@author: Yuri Fialho - 2Âº TEN FIALHO
 #	@since: 03/02/2016
 #	@contact: yurirfialho@gmail.com
 #
@@ -67,10 +67,10 @@
 			if($dispo->save()){
 				$msg = "Objeto salvo com sucesso!";
 			} else {
-				$msg_erro = "Nao foi possível salvar objeto!";
+				$msg_erro = "Nao foi possÃ­vel salvar objeto!";
 			}
 		} else {
-			$msg_erro = "Data e Hora são obrigatórias!";
+			$msg_erro = "Data e Hora sÃ£o obrigatÃ³rias!";
 		}
 	} elseif($action == "update") {
 		$dispo = Disponibilidade::find($id);
@@ -86,7 +86,7 @@
 		}
 	} elseif($action == "gerarDisponibilidadeMensal") {
 		if($ano == null || $ano == "" || $mes == null || $mes == "") {
-			$msg_erro = "Ano e mês são obrigatórios para gerar as disponibilidades!";
+			$msg_erro = "Ano e mÃªs sÃ£o obrigatÃ³rios para gerar as disponibilidades!";
 		} else {
 			$data_inicial = "$ano-$mes-01";
 			$fim = date("t", strtotime($data_inicial));
@@ -94,7 +94,7 @@
 			$query = " data = ? ";
 
 			if(Disponibilidade::count(array('conditions' => array($query, date("Y-m-d", strtotime($data_inicial)))))){
-				$msg_erro = "O mês já foi gerado.";
+				$msg_erro = "O mÃªs jÃ¡ foi gerado.";
 			} else {
 				for($i =1; $i < $fim; $i++) {
 					$nova_data = "$ano-$mes-$i";

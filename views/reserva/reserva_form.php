@@ -3,7 +3,7 @@
 # reserva_form.php
 #--------------------------------------------------------------------------
 #
-# @author: Yuri Fialho - 2∫ TEN FIALHO
+# @author: Yuri Fialho - 2¬∫ TEN FIALHO
 # @since: 03/02/2016
 # @contact: yurirfialho@gmail.com
 #
@@ -36,7 +36,7 @@
   <div class="panel-heading">Reservar</div>
   <div class="panel-body">
     <div class="alert alert-warning" role="alert">
-      A reserva est· sujeita ‡ an·lise e aprovaÁ„o, verifique a confirmaÁ„o da reserva no site. Obrigado por nos visitar!
+      A reserva est√° sujeita √† an√°lise e aprova√ß√£o, verifique a confirma√ß√£o da reserva no site. Obrigado por nos visitar!
     </div>
     <form role="form" class="form-horizontal" action="../../controllers/reservacontroller.php" method="post" >
     	<input type="hidden" id="action" name="action" value="<?php echo $_GET['action']; ?>"/>
@@ -57,10 +57,10 @@
     		</div>
   		</div>
   		<div class="form-group">
-  			<label for="hora" class="col-sm-2 control-label">Respons·vel</label>
+  			<label for="hora" class="col-sm-2 control-label">Respons√°vel</label>
   			<div class="col-sm-10">
 	    		<input type="text" class="form-control" required="true"
-	    			   placeholder="Nome do Respons·vel" id="nome" name="nome"
+	    			   placeholder="Nome do Respons√°vel" id="nome" name="nome"
 	    			   value="<?php echo $reserva->nome ?>" />
     		</div>
   		</div>
@@ -68,7 +68,7 @@
         <label for="hora" class="col-sm-2 control-label">Telefone</label>
         <div class="col-sm-10">
           <input type="text" class="form-control" required="true"
-               placeholder="Informe o telefone do respons·vel" id="telefone" name="telefone"
+               placeholder="Informe o telefone do respons√°vel" id="telefone" name="telefone"
                value="<?php echo $reserva->telefone ?>" />
         </div>
       </div>
@@ -76,7 +76,7 @@
         <label for="hora" class="col-sm-2 control-label">Celular</label>
         <div class="col-sm-10">
           <input type="text" class="form-control" required="true"
-               placeholder="Informe o n˙mero do celular do respons·vel." id="celular" name="celular"
+               placeholder="Informe o n√∫mero do celular do respons√°vel." id="celular" name="celular"
                value="<?php echo $reserva->celular ?>" />
         </div>
       </div>
@@ -84,7 +84,7 @@
         <label for="hora" class="col-sm-2 control-label">Email</label>
         <div class="col-sm-10">
           <input type="text" class="form-control" required="true"
-               placeholder="Informe o email do respons·vel." id="email" name="email"
+               placeholder="Informe o email do respons√°vel." id="email" name="email"
                value="<?php echo $reserva->email ?>" />
         </div>
       </div>
@@ -92,7 +92,7 @@
         <label for="hora" class="col-sm-2 control-label">Nr. Pessoas</label>
         <div class="col-sm-10">
           <input type="text" class="form-control" required="true"
-               placeholder="Quantas pessoas vir„o?" id="quantidade" name="quantidade"
+               placeholder="Quantas pessoas vir√£o?" id="quantidade" name="quantidade"
                value="<?php echo str_pad($reserva->quantidade, 3, "0", STR_PAD_LEFT) ?>" />
         </div>
       </div>
@@ -100,7 +100,7 @@
         <label for="hora" class="col-sm-2 control-label">Transporte</label>
         <div class="col-sm-10">
           <select id="transportetipo" name="transportetipo" class="form-control" required="true">
-          <option value="">Selecione o transporte que a entidade vir·.</option>
+          <option value="">Selecione o transporte que a entidade vir√°.</option>
           <?php 
             $tipo_transporte = TransporteTipo::find('all');
             foreach($tipo_transporte as $transp) { ?>
@@ -113,7 +113,7 @@
         <label for="nrtransp" class="col-sm-2 control-label">Nr. Transporte</label>
         <div class="col-sm-10">
           <input type="text" class="form-control" required="true"
-               placeholder="Quantas veÌculos vir„o?" id="nrtransp" name="nrtransp"
+               placeholder="Quantas ve√≠culos vir√£o?" id="nrtransp" name="nrtransp"
                value="<?php echo str_pad($reserva->transporte_numero, 3, "0", STR_PAD_LEFT) ?>" />
         </div>
       </div>
@@ -121,7 +121,7 @@
         <label for="escolaridadetipo" class="col-sm-2 control-label">Escolaridade</label>
         <div class="col-sm-10">
           <select id="escolaridadetipo" name="escolaridadetipo" class="form-control" required="true">
-          <option value="">Selecione a escolaridade do grupo que vir·.</option>
+          <option value="">Selecione a escolaridade do grupo que vir√°.</option>
           <?php 
             $tipo_escolaridade = EscolaridadeTipo::find('all');
             foreach($tipo_escolaridade as $escola) { ?>

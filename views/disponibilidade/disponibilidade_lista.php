@@ -3,7 +3,7 @@
 # disponibilidade_lista.php
 #--------------------------------------------------------------------------
 #
-# @author: Yuri Fialho - 2º TEN FIALHO
+# @author: Yuri Fialho - 2Âº TEN FIALHO
 # @since: 03/02/2016
 # @contact: yurirfialho@gmail.com
 #
@@ -73,17 +73,17 @@
       <button type="submit" class="btn btn-success" onclick="jQuery('#action').val('new')">
       	<span class="glyphicon glyphicon-floppy-disk">&nbsp;</span>Salvar</button>
       <button type="submit" class="btn btn-warning" onclick="jQuery('#action').val('gerarDisponibilidadeMensal')">
-        <span class="glyphicon glyphicon-flash">&nbsp;</span>Preencher Mês</button>
+        <span class="glyphicon glyphicon-flash">&nbsp;</span>Preencher MÃªs</button>
     </form>
     </div>
     </div>
     <table class="table"  cellSpacing=1 cellPadding=4 width="100%" border=0>
       <thead>
       <tr> 
-        <th>Cód.</th>
+        <th>CÃ³d.</th>
         <th>Data</th>
         <th>Hora</th>
-        <th>Ação</th>
+        <th>AÃ§Ã£o</th>
       </tr>
     </thead>
     <tbody>

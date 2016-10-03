@@ -3,7 +3,7 @@
 # reserva_lista.php
 #--------------------------------------------------------------------------
 #
-# @author: Yuri Fialho - 2º TEN FIALHO
+# @author: Yuri Fialho - 2Âº TEN FIALHO
 # @since: 03/02/2016
 # @contact: yurirfialho@gmail.com
 #
@@ -40,7 +40,7 @@
       </div>
       <div class="form-group">
         <select id="mes" name="mes" class="form-control">
-          <option value="">Mês</option>
+          <option value="">MÃªs</option>
           <?php 
             foreach ($map_mes as $mes_n => $mes_v) { ?>
               <option value="<?php echo $mes_n ?>" <?php echo $mes == $mes_n ? "selected" : "" ?>><?php echo $mes_v ?></option>
@@ -49,7 +49,7 @@
       </div>
       <div class="form-group">
         <select id="sit_reserva" name="sit_reserva" class="form-control">
-          <option value="">Situação Reserva</option>
+          <option value="">SituaÃ§Ã£o Reserva</option>
           <?php 
             foreach (ReservaSituacao::all() as $rsit) { ?>
               <option value="<?php echo $rsit->id ?>" <?php echo $sit_reserva == $rsit->id ? "selected" : ""; ?>><?php echo $rsit->descricao ?></option>
@@ -64,11 +64,11 @@
     <table class="table"  cellSpacing=1 cellPadding=4 width="100%" border=0>
       <thead>
       <tr> 
-        <th>Cód.</th>
+        <th>CÃ³d.</th>
         <th>Data</th>
         <th>Entidade</th>
         <th>Sit.</th>
-        <th>Ação</th>
+        <th>AÃ§Ã£o</th>
       </tr>
     </thead>
     <tbody>
