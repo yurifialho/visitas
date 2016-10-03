@@ -10,13 +10,18 @@
 #--------------------------------------------------------------------------
 # Recebe as requisicoes da view e trata.
 #-------------------------------------------------------------------------- 
+	require_once "../includes/commons.php";
 	require_once "../includes/database.config.php";
+	require_once "../helpers/application_helper.php";
+	require_once "../helpers/route_helper.php";
 
 	session_start();
 	
 	if(isset($_SESSION['idusuario'])) {
 		$usuarioid = $_SESSION['idusuario'];
 	}
+
+	$router = new RouteHelper("../views/disponibilidade/disponibilidade_lista.php");
 
 	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     	$action    = $_POST['action'];
@@ -84,34 +89,40 @@
 			$msg_erro = "Ano e mês são obrigatórios para gerar as disponibilidades!";
 		} else {
 			$data_inicial = "$ano-$mes-01";
-			$fim = date("t", strtotime($a_date));
+			$fim = date("t", strtotime($data_inicial));
 
-			for($i =1; $i < $fim; $i++) {
-				$nova_data = "$ano-$mes-$i";
-				
-				$data_disponivel = date("Y-m-d", strtotime($nova_data));
-				if(date('N',strtotime($nova_data)) < 7) {
-				for($hora = 8; $hora <= 11; $hora++) { #horario manha
-						$dispo = new Disponibilidade();
-						$dispo->data = $nova_data;
-						$dispo->hora = "$hora:00";
+			$query = " data = ? ";
 
-						$dispo->save();
-				}
-				}
-				if(date('N',strtotime($nova_data)) < 6) {
-				for($hora = 13; $hora <= 15; $hora++) { #horario tarde
-						$dispo = new Disponibilidade();
-						$dispo->data = $nova_data;
-						$dispo->hora = "$hora:00";
+			if(Disponibilidade::count(array('conditions' => array($query, date("Y-m-d", strtotime($data_inicial)))))){
+				$msg_erro = "O mês já foi gerado.";
+			} else {
+				for($i =1; $i < $fim; $i++) {
+					$nova_data = "$ano-$mes-$i";
+					
+					$data_disponivel = date("Y-m-d", strtotime($nova_data));
+					if(date('N',strtotime($nova_data)) < 7) {
+					for($hora = 8; $hora <= 11; $hora++) { #horario manha
+							$dispo = new Disponibilidade();
+							$dispo->data = $nova_data;
+							$dispo->hora = "$hora:00";
 
-						$dispo->save();
-				}
+							$dispo->save();
+					}
+					}
+					if(date('N',strtotime($nova_data)) < 6) {
+					for($hora = 13; $hora <= 15; $hora++) { #horario tarde
+							$dispo = new Disponibilidade();
+							$dispo->data = $nova_data;
+							$dispo->hora = "$hora:00";
+
+							$dispo->save();
+					}
+					}
 				}
 			}
 		}
-	}  	
-	
+	}
+
 	header('Location: '."../views/disponibilidade/disponibilidade_lista.php?msg=$msg&msg_erro=$msg_erro&a=1$query");	
 	
 ?>
