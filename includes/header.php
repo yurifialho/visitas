@@ -49,11 +49,16 @@
   echo "<script src='".$BASE."js/jquery.maskedinput.min.js'></script>";
   echo "<script src='".$BASE."js/jquery.complexify.min.js'></script>";
   echo "<script src='".$BASE."js/jquery.complexify.banlist.js'></script>";
+  echo "<script src='".$BASE."js/fullcalendar-3.0.1/lib/moment.min.js'></script>";
+  echo "<script src='".$BASE."js/fullcalendar-3.0.1/fullcalendar.min.js'></script>";
+  echo "<script src='".$BASE."js/fullcalendar-3.0.1/locale-all.js'></script>";
+  
 	echo "<link rel='stylesheet' type='text/css' href='".$BASE."css/bootstrap.min.css'></link>";
+  echo "<link rel='stylesheet' type='text/css' href='".$BASE."css/bootstrap-responsive.css'></link>";
 	echo "<link rel='stylesheet' type='text/css' href='".$BASE."css/datepicker.css'></link>";
-	echo "<link rel='stylesheet' type='text/css' href='".$BASE."css/bootstrap-responsive.css'></link>";
 	echo "<link rel='stylesheet' type='text/css' href='".$BASE."css/starter-template.css'></link>";
 	echo "<link rel='stylesheet' type='text/css' href='".$BASE."css/datepicker.css'></link>";
+  echo "<link rel='stylesheet' type='text/css' href='".$BASE."js/fullcalendar-3.0.1/fullcalendar.min.css'></link>";
   echo "<link rel='shortcut icon' type='image/x-icon' href='".$BASE."images/10rm.ico'></link>";
 ?>
 

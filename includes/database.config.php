@@ -33,7 +33,7 @@
 	ActiveRecord\Config::initialize(function($cfg) use(&$username, &$password, &$host, &$database)
 	{
     	$cfg->set_model_directory('.');
-    	$cfg->set_connections(array('development' => "mysql://$username:$password@$host/$database"));
+    	$cfg->set_connections(array('development' => "mysql://$username:$password@$host/$database?charset=utf8"));
 	});
 
 ?>

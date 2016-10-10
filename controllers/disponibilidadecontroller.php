@@ -96,11 +96,12 @@
 			if(Disponibilidade::count(array('conditions' => array($query, date("Y-m-d", strtotime($data_inicial)))))){
 				$msg_erro = "O mês já foi gerado.";
 			} else {
-				for($i =1; $i < $fim; $i++) {
+				for($i =1; $i <= $fim; $i++) {
 					$nova_data = "$ano-$mes-$i";
 					
 					$data_disponivel = date("Y-m-d", strtotime($nova_data));
-					if(date('N',strtotime($nova_data)) < 7) {
+					
+					#de seg - dom pela manha
 					for($hora = 8; $hora <= 11; $hora++) { #horario manha
 							$dispo = new Disponibilidade();
 							$dispo->data = $nova_data;
@@ -108,7 +109,8 @@
 
 							$dispo->save();
 					}
-					}
+					
+					#de seg - qui somente a tarde
 					if(date('N',strtotime($nova_data)) < 6) {
 					for($hora = 13; $hora <= 15; $hora++) { #horario tarde
 							$dispo = new Disponibilidade();

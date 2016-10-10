@@ -41,18 +41,27 @@
 	echo "<script src='".$BASE."js/jquery-1.11.1.min.js'></script>";
 	echo "<script src='".$BASE."js/bootstrap.min.js'></script>";
 	echo "<script src='".$BASE."js/bootstrap-datepicker.js'></script>";
-  echo "<script src='".$BASE."js/jquery.maskedinput.min.js'></script>";
+  	echo "<script src='".$BASE."js/jquery.maskedinput.min.js'></script>";
+  	echo "<script src='".$BASE."js/fullcalendar-3.0.1/lib/moment.min.js'></script>";
+  	echo "<script src='".$BASE."js/fullcalendar-3.0.1/fullcalendar.min.js'></script>";
+  	echo "<script src='".$BASE."js/fullcalendar-3.0.1/locale-all.js'></script>";
+
 	echo "<link rel='stylesheet' type='text/css' href='".$BASE."css/bootstrap.min.css'></link>";
 	echo "<link rel='stylesheet' type='text/css' href='".$BASE."css/datepicker.css'></link>";
 	echo "<link rel='stylesheet' type='text/css' href='".$BASE."css/bootstrap-responsive.css'></link>";
 	echo "<link rel='stylesheet' type='text/css' href='".$BASE."css/starter-template.css'></link>";
 	echo "<link rel='stylesheet' type='text/css' href='".$BASE."css/datepicker.css'></link>";
-  echo "<link rel='shortcut icon' type='image/x-icon' href='".$BASE."images/10rm.ico'></link>";
+	echo "<link rel='stylesheet' type='text/css' href='".$BASE."js/fullcalendar-3.0.1/fullcalendar.min.css'></link>";
+  	echo "<link rel='shortcut icon' type='image/x-icon' href='".$BASE."images/10rm.ico'></link>";
 ?>
 
 <style type="text/css">
 	.green{color:green;}
 	.red{color:red;}
+
+	body {
+		padding-top: 0px;
+	}
 </style>
 </head>
 <div class="container">
