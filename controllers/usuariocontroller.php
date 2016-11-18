@@ -55,9 +55,9 @@
 		$usuario = Usuario::find($id);
 		
 		if($usuario->delete()) {
-			$router->addMsg("Objeto excluído com sucesso!");
+			$router->addMsg("Objeto excluido com sucesso!");
 		} else {
-			$router->addMsgErro("Nao foi possível excluir objeto!");
+			$router->addMsgErro("Nao foi possivel excluir objeto!");
 		}
 		$router->redirect();
 		return;
@@ -76,10 +76,10 @@
 			if($usuario->save()){
 				$router->addMsg("Objeto salvo com sucesso!");
 			} else {
-				$router->addMsgErro("Nao foi possível salvar objeto!");
+				$router->addMsgErro("Nao foi possivel salvar objeto!");
 			}
 		} else {
-			$router->addMsgErro("Login e Senha são obrigatórias!"); 
+			$router->addMsgErro("Login e Senha sao obrigatorias!"); 
 		}
 		$router->redirect();return;
 	} elseif($action == "update") {
@@ -96,10 +96,10 @@
 			if($usuario->save()){
 				$router->addMsg("Objeto salvo com sucesso!");
 			} else {
-				$router->addMsgErro("Nao foi possível salvar objeto!");
+				$router->addMsgErro("Nao foi possivel salvar objeto!");
 			}
 		} else {
-			$router->addMsgErro("Usuário não localizado.");
+			$router->addMsgErro("Usuario nao localizado.");
 		}
 
 		$router->redirect(); return;

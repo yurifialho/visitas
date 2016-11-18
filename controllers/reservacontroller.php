@@ -66,7 +66,7 @@
 				$mail->sendCancelamentoAgendamento($reserva->email, $reserva->entidade,
 					$reserva->disponibilidade->data, $reserva->disponibilidade->hora);
 			} else {
-				$msg_erro = "Não foi possível excluir objeto!";
+				$msg_erro = "Nao foi possivel excluir objeto!";
 			}
 		}
 	} elseif($action == "new") {
@@ -78,10 +78,10 @@
 			if($dispo->save()){
 				$msg = "Objeto salvo com sucesso!";
 			} else {
-				$msg_erro = "Nao foi possível salvar objeto!";
+				$msg_erro = "Nao foi possivel salvar objeto!";
 			}
 		} else {
-			$msg_erro = "Data e Hora são obrigatórias!";
+			$msg_erro = "Data e Hora sao obrigatorias!";
 		}
 	} elseif($action == "update") {
 		$reserva = Reserva::find($id);
@@ -121,7 +121,7 @@
 				$msg_erro = "Nao foi possivel salvar objeto!";
 			}
 		} else {
-			$msg_erro = "Objeto não foi localizado!";
+			$msg_erro = "Objeto nao foi localizado!";
 		}
 	} elseif($action == "agendar") {
 		$reserva = new Reserva();
@@ -138,7 +138,7 @@
 		$reserva->escolaridade_tipo_id = $escolaridade;
 
 		if($reserva->save()){
-			$msg = "Objeto salvo com sucesso! A reserva encontra-se em análise para aprovação. $resp";
+			$msg = "Objeto salvo com sucesso! A reserva se encontra em analise para aprovacao. $resp";
 
 			$dispo = Disponibilidade::find($disponibilidade_id);
 			$mail = new MailHelper();

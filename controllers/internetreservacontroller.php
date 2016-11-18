@@ -15,7 +15,9 @@
 	require_once "../helpers/application_helper.php";
 	require_once "../helpers/route_helper.php";
 	include 	 "../libs/recaptcha/autoload.php";
-
+	
+	
+	
 	session_start();
 	
 	if(isset($_SESSION['idusuario'])) {
@@ -25,8 +27,16 @@
 	$router = new RouteHelper("../views/internet/internet_reserva_lista.php");
 	
 	function validateRecaptch() {
-		$siteKey = '6Lc1wx8TAAAAABU2y3ysPDDt7B-AmCRFJh-1cJhS';
-		$secret  = '6Lc1wx8TAAAAAPElHWw9hGSbz52VhjR6V0gl3cfm';
+		#Load Config File
+		$config = parse_ini_file(dirname(__FILE__) ."/../config.php");
+
+		$isEnabled = $config['IS_ENABLED'];
+		if(!$isEnabled) {
+			return 1; 
+		}
+		
+		$siteKey = $config['SITEKEY'];
+		$secret  = $config['SECRET'];
 		$recaptcha = new \ReCaptcha\ReCaptcha($secret);
 		$resp = $recaptcha->verify($_POST['g-recaptcha-response'], $_SERVER['REMOTE_ADDR']);
 
@@ -63,31 +73,37 @@
 		if($ano != NULL && isNumeric($ano)){
 			$router->addParam("ano", $ano);
 		} else {
-			$router->addMsgErro("Ano informado inválido.");
+			$router->addMsgErro("Ano informado invalido.");
 		}
 		if($mes != NULL && isNumeric($mes)){
 			$router->addParam("mes", $mes);
 		} else {
-			$router->addMsgErro("Mês informado inválido.");
+			$router->addMsgErro("Mes informado invalido.");
 		}
 		$router->redirect();
 		return;
 	} elseif($action == "agendar") {
-		/*if(!validateRecaptch()) {
-			$router->addMsgErro("Código não confere com a imagem!");
+		if(!validateRecaptch()) {
+			$router->addMsgErro("Codigo nao confere com a imagem!");
 			$router->redirect(); return;
-		}*/
+		}
 
 		#quantidade de visitante tem que ser maior que 10.
 		if(isset($quantidade) && $quantidade <= 10) {
 			$router->addMsgErro("Quantidade de pessoas tem que ser maior que 10!");
 			$router->redirect(); return;
 		}
-		
+
 		$dispo = Disponibilidade::find($disponibilidade_id);
 
 		if($dispo != null && $dispo->reserva != null) {
-			$router->addMsgErro("Essa data já encontra-se reservada por outra pessoa, por favor tente agendar em outra data!");
+			$router->addMsgErro("Essa data ja se encontra reservada por outra pessoa, por favor tente agendar em outra data!");
+			$router->redirect(); return;
+		}
+
+		#verifica se a data da disponibilidade é maior que hoje
+		if($dispo != null && $dispo->data <= new DateTime(date("Y-m-d", time()))) {
+			$router->addMsgErro("Agendamento somente para data futura.");
 			$router->redirect(); return;
 		}
 				
@@ -105,7 +121,7 @@
 		$reserva->escolaridade_tipo_id = $escolaridade;
 			
 		if($reserva->save()){
-			$router->addMsg("Objeto salvo com sucesso! A reserva encontra-se em análise para aprovação.");
+			$router->addMsg("Objeto salvo com sucesso! A reserva se encontra em analise para aprovacao.");
 
 			$mail = new MailHelper();
 			$mail->sendAgendamento($email, $entidade, $reserva->disponibilidade->data,
@@ -117,7 +133,7 @@
 					
 		$router->redirect(); return;
 	} else {
-		$router->addMsgErro("Operação não suportada!");
+		$router->addMsgErro("Operacao nao suportada!");
 		$router->redirect(); return;
 	}  		
 ?>
